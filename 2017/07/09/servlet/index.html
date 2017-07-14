@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://ohfk1r827.bkt.clouddn.com/ServletResponse.png">
 <meta property="og:image" content="http://ohfk1r827.bkt.clouddn.com/ServletContext.png">
 <meta property="og:image" content="http://ohfk1r827.bkt.clouddn.com/http-request-method.jpg">
-<meta property="og:updated_time" content="2017-07-09T05:52:22.918Z">
+<meta property="og:updated_time" content="2017-07-09T05:54:51.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过源码详解 Servlet">
 <meta name="twitter:description" content="Servlet 结构
@@ -68,6 +68,8 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/archives/">博客</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
@@ -131,6 +133,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -150,12 +154,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/">博客</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -312,7 +318,7 @@
 <p>3、实现 SingleThreadModel 接口的 Servlet 在被多个客户请求时一个时刻只能有一个线程运行，不推荐使用。</p>
 <p>4、如果必须在 servlet 使用同步代码，应尽量在最小的范围上（代码块）进行同步，同步代码越少，Servlet 执行才能越好，避免对 doGet() 或 doPost() 方法同步。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>全文首先通过一张 Servlet 中的核心 Servlet 类图关系，了解了几种 Servlet 之间的关系及其内部方法。然后在分别介绍这几种 Servlet，通过分析部分重要方法的源码来了解，还介绍了 Servlet 中多线程的问题的解决方法。</p>
-<p>注：文章原创，首发于：<a href="www.54tianzhisheng.cn">zhisheng 的博客</a>，文章可转载但请注明地址为：<a href="http://www.54tianzhisheng.cn/2017/07/09/servlet/" target="_blank" rel="external">http://www.54tianzhisheng.cn/2017/07/09/servlet/</a></p>
+<p>注：文章原创，首发于：<a href="http://www.54tianzhisheng.cn" target="_blank" rel="external">zhisheng 的博客</a>，文章可转载但请注明地址为：<a href="http://www.54tianzhisheng.cn/2017/07/09/servlet/" target="_blank" rel="external">http://www.54tianzhisheng.cn/2017/07/09/servlet/</a></p>
 
       
 
@@ -430,6 +436,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/07/14/Spring-MVC01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          看透 Spring MVC 源代码分析与实践 ——  网站基础知识
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/25/Velocity-foreach/" id="article-nav-older" class="article-nav-link-wrap">
@@ -780,11 +795,15 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://www.gitnavi.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>程序员工具网址导航</a>
+              <a href="http://www.gitnavi.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>程序员工具导航</a>
             </li>
           
             <li class="search-li">
-              <a href="http://blog.csdn.net/tzs_1041218129" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN博客</a>
+              <a href="http://blog.csdn.net/tzs_1041218129" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN博客</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://juejin.im/user/57510b82128fe10056ca70fc" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>掘金</a>
             </li>
           
             <li class="search-li">
