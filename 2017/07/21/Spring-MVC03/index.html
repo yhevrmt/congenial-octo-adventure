@@ -6,105 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>源码大招：不服来战！撸这些完整项目，你不牛逼都难！ | Zhisheng的博客</title>
+  <title>看透 Spring MVC 源代码分析与实践 ——  Spring MVC 组件分析 | Zhisheng的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="经常有人问我有没有什么项目代码，我回复说去 Github 找，但是还是好多人不知道如何找到那些比较好的项目。
-今天花了点时间找了些安卓的项目，觉得还是不错的，几乎就是自己生活常用的一些 app ，如果你是一个 Android 开发者，我觉得撸完这些项目，你想不牛逼都难。
-菜鸟新闻菜鸟新闻 客户端是一个仿照36Kr官方,实 时抓取36Kr官网数据的资讯类新闻客户端。
-包括首页新闻,详情,发现,活动,">
+  <meta name="description" content="由于星期一接到面试通知，和面试官约好了星期四面试，所以这几天没更新完这系列的文章，面完试后立马就把这个解决掉。通过这次面试，也让我懂得了很多，知道了自己的一些不足之处，后面还要继续下功夫好好的深入复习下去。这几篇文章写的我觉得还是不够仔细，感兴趣的还是建议自己去看看源码。
+第 11 章  ——  组件概览HandlerMapping
+根据 request 找到对应的处理器 Handler 和 In">
 <meta property="og:type" content="article">
-<meta property="og:title" content="源码大招：不服来战！撸这些完整项目，你不牛逼都难！">
-<meta property="og:url" content="http://yoursite.com/2017/05/13/android-projects/index.html">
+<meta property="og:title" content="看透 Spring MVC 源代码分析与实践 ——  Spring MVC 组件分析">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/Spring-MVC03/index.html">
 <meta property="og:site_name" content="Zhisheng的博客">
-<meta property="og:description" content="经常有人问我有没有什么项目代码，我回复说去 Github 找，但是还是好多人不知道如何找到那些比较好的项目。
-今天花了点时间找了些安卓的项目，觉得还是不错的，几乎就是自己生活常用的一些 app ，如果你是一个 Android 开发者，我觉得撸完这些项目，你想不牛逼都难。
-菜鸟新闻菜鸟新闻 客户端是一个仿照36Kr官方,实 时抓取36Kr官网数据的资讯类新闻客户端。
-包括首页新闻,详情,发现,活动,">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-news/raw/master/screenshot/cniaonews.gif">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-news/raw/master/screenshot/pull_4%20(2">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-news/raw/master/screenshot/Screenshot_2015-12-07-12-36-11.png">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-news/raw/master/screenshot/Screenshot_2015-12-07-12-35-53.png">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-news/raw/master/screenshot/Screenshot_2015-12-07-12-38-19.png">
-<meta property="og:image" content="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/home.gif">
-<meta property="og:image" content="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/fs_1.gif">
-<meta property="og:image" content="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/fs_3.gif">
-<meta property="og:image" content="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/fr_1.gif">
-<meta property="og:image" content="https://github.com/myxh/CoolShopping/raw/master/ScreenCapture/0.png">
-<meta property="og:image" content="https://github.com/myxh/CoolShopping/raw/master/ScreenCapture/6.png">
-<meta property="og:image" content="https://github.com/myxh/CoolShopping/raw/master/ScreenCapture/22.png">
-<meta property="og:image" content="https://github.com/yanbober/RNPolymerPo/raw/master/doc/home_page.png">
-<meta property="og:image" content="https://github.com/yanbober/RNPolymerPo/raw/master/doc/weixin_page.png">
-<meta property="og:image" content="https://github.com/yanbober/RNPolymerPo/raw/master/doc/online_news_page.png">
-<meta property="og:image" content="https://github.com/yanbober/RNPolymerPo/raw/master/doc/chart_page.png">
-<meta property="og:image" content="https://github.com/HotBitmapGG/bilibili-android-client/raw/master-x/art/01.png">
-<meta property="og:image" content="https://github.com/HotBitmapGG/bilibili-android-client/raw/master-x/art/07.png">
-<meta property="og:image" content="https://github.com/HotBitmapGG/bilibili-android-client/raw/master-x/art/004.png">
-<meta property="og:image" content="https://github.com/linglongxin24/DylanStepCount/raw/master/screenshots/%E4%B8%BB%E9%A1%B5.jpg">
-<meta property="og:image" content="https://github.com/linglongxin24/DylanStepCount/raw/master/screenshots/%E9%94%BB%E7%82%BC%E8%AE%A1%E5%88%92.jpg">
-<meta property="og:image" content="https://github.com/linglongxin24/DylanStepCount/raw/master/screenshots/%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95.jpg">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-weibo/raw/master/screenshot/10.jpg">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-weibo/raw/master/screenshot/5.jpg">
-<meta property="og:image" content="https://github.com/yxs666/cniao5-weibo/raw/master/screenshot/6.jpg">
-<meta property="og:image" content="https://github.com/LehmanHe/A4print/raw/master/picture/1.png">
-<meta property="og:image" content="https://github.com/LehmanHe/A4print/raw/master/picture/a1.png">
-<meta property="og:image" content="https://github.com/LehmanHe/A4print/raw/master/picture/a2.png">
-<meta property="og:image" content="https://github.com/LehmanHe/A4print/raw/master/picture/a4.png">
-<meta property="og:image" content="https://github.com/LehmanHe/A4print/raw/master/picture/a5.png">
-<meta property="og:image" content="https://github.com/LehmanHe/A4print/raw/master/picture/6.png">
-<meta property="og:image" content="https://github.com/robotlife/tongbanjie_picture/raw/master/%E5%BC%95%E5%AF%BC%E9%A1%B5.png">
-<meta property="og:image" content="https://github.com/robotlife/tongbanjie_picture/raw/master/%E9%A6%96%E9%A1%B5.png">
-<meta property="og:image" content="https://github.com/robotlife/tongbanjie_picture/raw/master/%E6%8A%95%E8%B5%84.png">
-<meta property="og:image" content="https://github.com/robotlife/tongbanjie_picture/raw/master/%E8%B4%A2%E5%AF%8C2.png">
-<meta property="og:image" content="https://github.com/robotlife/tongbanjie_picture/raw/master/%E4%BF%AE%E6%94%B9%E4%BA%A4%E6%98%93%E5%AF%86%E7%A0%81.png">
-<meta property="og:image" content="https://github.com/robotlife/tongbanjie_picture/raw/master/%E6%96%B0%E6%89%8B%E6%A0%87.png">
-<meta property="og:image" content="https://camo.githubusercontent.com/6b26b624ce2cd266f826a7ddcbefbd555c9a737a/687474703a2f2f692e696d6775722e636f6d2f71414a676a62552e706e67">
-<meta property="og:image" content="https://camo.githubusercontent.com/7c5da3833d49c5a6be574e705413e7eb99775578/687474703a2f2f692e696d6775722e636f6d2f6a5457757751582e706e67">
-<meta property="og:image" content="https://camo.githubusercontent.com/8d865718d786c481b8ac962a97b88ed615a58ee9/687474703a2f2f692e696d6775722e636f6d2f575a6f373471472e706e67">
-<meta property="og:image" content="https://github.com/Allyns/Lives/raw/master/img/54F171BC28ED5C6A4AEC296B3FCF19E1.png">
-<meta property="og:image" content="https://github.com/Allyns/Lives/raw/master/img/7505C39DFA9E3C54B6272A749CDA5125.png">
-<meta property="og:image" content="https://github.com/Allyns/Lives/raw/master/img/C7075614E4A7DD3AD34F62426A557E9B.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Basic.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Today.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Custom.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Tag.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Month.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_List.png">
-<meta property="og:image" content="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Report.png">
-<meta property="og:image" content="https://github.com/lizixian18/AppLock/raw/master/art/1.png">
-<meta property="og:image" content="https://github.com/lizixian18/AppLock/raw/master/art/2.png">
-<meta property="og:image" content="https://github.com/lizixian18/AppLock/raw/master/art/4.png">
-<meta property="og:image" content="https://github.com/lizixian18/AppLock/raw/master/art/10.png">
-<meta property="og:image" content="https://github.com/wingjay/jianshi/raw/master/material/screenshots/with_phone/1.PNG">
-<meta property="og:image" content="https://github.com/wingjay/jianshi/raw/master/material/screenshots/with_phone/2.PNG">
-<meta property="og:image" content="https://github.com/wingjay/jianshi/raw/master/material/screenshots/with_phone/7.PNG">
-<meta property="og:image" content="https://camo.githubusercontent.com/6f690f12cf8f8cbf9a1e400fe73a4a3fbc075872/687474703a2f2f692e696d6775722e636f6d2f6e6d71504a6f6b2e676966">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/1.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/3.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/4.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/5.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/6.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/7.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/8.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/9.gif">
-<meta property="og:image" content="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/13.gif">
-<meta property="og:image" content="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_01.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_02.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_04.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_05.jpg">
-<meta property="og:image" content="https://github.com/youlookwhat/CloudReader/raw/master/file/cloudreader.gif">
-<meta property="og:image" content="https://github.com/youlookwhat/CloudReader/raw/master/file/page_gank_00.png">
-<meta property="og:image" content="https://github.com/youlookwhat/CloudReader/raw/master/file/page_movie_01.png">
-<meta property="og:image" content="https://github.com/youlookwhat/CloudReader/raw/master/file/page_movie_03.png">
-<meta property="og:image" content="https://github.com/youlookwhat/CloudReader/raw/master/file/page_menu_01.png">
-<meta property="og:image" content="https://github.com/atguigu01/Shopping/raw/master/gif/%E7%A1%85%E8%B0%B7%E5%95%86%E5%9F%8E%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA.gif">
-<meta property="og:updated_time" content="2017-06-13T10:41:04.937Z">
+<meta property="og:description" content="由于星期一接到面试通知，和面试官约好了星期四面试，所以这几天没更新完这系列的文章，面完试后立马就把这个解决掉。通过这次面试，也让我懂得了很多，知道了自己的一些不足之处，后面还要继续下功夫好好的深入复习下去。这几篇文章写的我觉得还是不够仔细，感兴趣的还是建议自己去看看源码。
+第 11 章  ——  组件概览HandlerMapping
+根据 request 找到对应的处理器 Handler 和 In">
+<meta property="og:image" content="http://ohfk1r827.bkt.clouddn.com/spring-mvc1.jpg">
+<meta property="og:updated_time" content="2017-07-21T02:44:08.090Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="源码大招：不服来战！撸这些完整项目，你不牛逼都难！">
-<meta name="twitter:description" content="经常有人问我有没有什么项目代码，我回复说去 Github 找，但是还是好多人不知道如何找到那些比较好的项目。
-今天花了点时间找了些安卓的项目，觉得还是不错的，几乎就是自己生活常用的一些 app ，如果你是一个 Android 开发者，我觉得撸完这些项目，你想不牛逼都难。
-菜鸟新闻菜鸟新闻 客户端是一个仿照36Kr官方,实 时抓取36Kr官网数据的资讯类新闻客户端。
-包括首页新闻,详情,发现,活动,">
-<meta name="twitter:image" content="https://github.com/yxs666/cniao5-news/raw/master/screenshot/cniaonews.gif">
+<meta name="twitter:title" content="看透 Spring MVC 源代码分析与实践 ——  Spring MVC 组件分析">
+<meta name="twitter:description" content="由于星期一接到面试通知，和面试官约好了星期四面试，所以这几天没更新完这系列的文章，面完试后立马就把这个解决掉。通过这次面试，也让我懂得了很多，知道了自己的一些不足之处，后面还要继续下功夫好好的深入复习下去。这几篇文章写的我觉得还是不够仔细，感兴趣的还是建议自己去看看源码。
+第 11 章  ——  组件概览HandlerMapping
+根据 request 找到对应的处理器 Handler 和 In">
+<meta name="twitter:image" content="http://ohfk1r827.bkt.clouddn.com/spring-mvc1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Zhisheng的博客" type="application/atom+xml">
   
@@ -254,20 +175,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-android-projects" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Spring-MVC03" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      源码大招：不服来战！撸这些完整项目，你不牛逼都难！
+      看透 Spring MVC 源代码分析与实践 ——  Spring MVC 组件分析
     </h1>
   
 
         
-        <a href="/2017/05/13/android-projects/" class="archive-article-date">
-  	<time datetime="2017-05-13T10:04:51.795Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
+        <a href="/2017/07/21/Spring-MVC03/" class="archive-article-date">
+  	<time datetime="2017-07-21T02:34:05.009Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
 </a>
         
       </header>
@@ -282,7 +203,7 @@
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
         <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#菜鸟新闻"><span class="toc-number">1.</span> <span class="toc-text">菜鸟新闻</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KuaiChuan"><span class="toc-number">2.</span> <span class="toc-text">KuaiChuan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CoolShopping"><span class="toc-number">3.</span> <span class="toc-text">CoolShopping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RNPolymerPo"><span class="toc-number">4.</span> <span class="toc-text">RNPolymerPo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bilibili"><span class="toc-number">5.</span> <span class="toc-text">bilibili</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StockChart"><span class="toc-number">6.</span> <span class="toc-text">StockChart</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android精准计步器"><span class="toc-number">7.</span> <span class="toc-text">Android精准计步器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#菜鸟微博"><span class="toc-number">8.</span> <span class="toc-text">菜鸟微博</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在线云打印平台"><span class="toc-number">9.</span> <span class="toc-text">在线云打印平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#铜板街"><span class="toc-number">10.</span> <span class="toc-text">铜板街</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#礼物说"><span class="toc-number">11.</span> <span class="toc-text">礼物说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IotXmpp"><span class="toc-number">12.</span> <span class="toc-text">IotXmpp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lives"><span class="toc-number">13.</span> <span class="toc-text">Lives</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CoCoin"><span class="toc-number">14.</span> <span class="toc-text">CoCoin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AppLock"><span class="toc-number">15.</span> <span class="toc-text">AppLock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jianshi-简诗"><span class="toc-number">16.</span> <span class="toc-text">jianshi 简诗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#storage-chooser"><span class="toc-number">17.</span> <span class="toc-text">storage-chooser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LQRWeChat"><span class="toc-number">18.</span> <span class="toc-text">LQRWeChat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PonyExpress-小马快递"><span class="toc-number">19.</span> <span class="toc-text">PonyExpress  小马快递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CloudReader-云阅"><span class="toc-number">20.</span> <span class="toc-text">CloudReader  云阅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硅谷商城"><span class="toc-number">21.</span> <span class="toc-text">硅谷商城</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第-11-章-——-组件概览"><span class="toc-number">1.</span> <span class="toc-text">第 11 章  ——  组件概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">2.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-MVC-原理总结"><span class="toc-number">4.</span> <span class="toc-text">Spring MVC 原理总结</span></a></li></ol>
          </div>
    <script type="text/javascript">
     function showToc(){
@@ -303,149 +224,42 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>经常有人问我有没有什么项目代码，我回复说去 Github 找，但是还是好多人不知道如何找到那些比较好的项目。</p>
-<p>今天花了点时间找了些安卓的项目，觉得还是不错的，几乎就是自己生活常用的一些 app ，如果你是一个 Android 开发者，我觉得撸完这些项目，你想不牛逼都难。</p>
-<h3 id="菜鸟新闻"><a href="#菜鸟新闻" class="headerlink" title="菜鸟新闻"></a>菜鸟新闻</h3><p><a href="http://www.cniao5.com/" target="_blank" rel="external">菜鸟新闻</a> 客户端是一个仿照36Kr官方,实 时抓取36Kr官网数据的资讯类新闻客户端。</p>
-<p>包括首页新闻,详情,发现,活动,实时数据抓取,侧滑效果,第三方登录以及分享,消息推送等相关功能客户端。<br><a id="more"></a></p>
-<p>课程地址： <a href="http://www.cniao5.com/clazz/view/10076.html" target="_blank" rel="external">http://www.cniao5.com/clazz/view/10076.html</a><br>视频下载链接： <a href="http://pan.baidu.com/s/1eQLyQxc" target="_blank" rel="external">http://pan.baidu.com/s/1eQLyQxc</a> 密码：3ts1 </p>
-<p>项目源码下载地址：<a href="https://github.com/yxs666/cniao5-news" target="_blank" rel="external">https://github.com/yxs666/cniao5-news</a></p>
-<p><strong>运行截图:</strong></p>
-<p><img src="https://github.com/yxs666/cniao5-news/raw/master/screenshot/cniaonews.gif" alt=""></p>
-<p><img src="https://github.com/yxs666/cniao5-news/raw/master/screenshot/pull_4%20(2" alt="">.gif)</p>
-<p><img src="https://github.com/yxs666/cniao5-news/raw/master/screenshot/Screenshot_2015-12-07-12-36-11.png" alt=""></p>
-<p><img src="https://github.com/yxs666/cniao5-news/raw/master/screenshot/Screenshot_2015-12-07-12-35-53.png" alt=""></p>
-<p><img src="https://github.com/yxs666/cniao5-news/raw/master/screenshot/Screenshot_2015-12-07-12-38-19.png" alt=""></p>
-<h3 id="KuaiChuan"><a href="#KuaiChuan" class="headerlink" title="KuaiChuan"></a>KuaiChuan</h3><p>仿茄子快传的一款文件传输应用， 涉及到Socket通信，包括TCP，UDP通信</p>
-<p>项目源码：<a href="https://github.com/mayubao/KuaiChuan" target="_blank" rel="external">https://github.com/mayubao/KuaiChuan</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/home.gif" alt=""></p>
-<p><img src="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/fs_1.gif" alt=""></p>
-<p><img src="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/fs_3.gif" alt=""></p>
-<p><img src="https://github.com/mayubao/KuaiChuan/raw/master/ScreenShot/fr_1.gif" alt=""></p>
-<h3 id="CoolShopping"><a href="#CoolShopping" class="headerlink" title="CoolShopping"></a>CoolShopping</h3><p>一个仿拉手团购的购物App，采用Bmob后台实现短信验证码注册、登录、收藏、订单管理、自动更新等功能，数据抓取自拉手团购</p>
-<p>项目地址：<a href="https://github.com/myxh/CoolShopping" target="_blank" rel="external">https://github.com/myxh/CoolShopping</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/myxh/CoolShopping/raw/master/ScreenCapture/0.png" alt=""></p>
-<p><img src="https://github.com/myxh/CoolShopping/raw/master/ScreenCapture/6.png" alt=""></p>
-<p><img src="https://github.com/myxh/CoolShopping/raw/master/ScreenCapture/22.png" alt=""></p>
-<h3 id="RNPolymerPo"><a href="#RNPolymerPo" class="headerlink" title="RNPolymerPo"></a>RNPolymerPo</h3><p>RNPolymerPo 是一个基于 <a href="https://github.com/facebook/react-native" target="_blank" rel="external">React Native</a> 的生活类聚合实战项目，目前由于没有 MAC 设备，所以没有适配 iOS，感兴趣的可以自行适配 app 目录下相关 JS 代码即可。</p>
-<p>项目地址：<a href="https://github.com/yanbober/RNPolymerPo" target="_blank" rel="external">https://github.com/yanbober/RNPolymerPo</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/yanbober/RNPolymerPo/raw/master/doc/home_page.png" alt=""></p>
-<p><img src="https://github.com/yanbober/RNPolymerPo/raw/master/doc/weixin_page.png" alt=""></p>
-<p><img src="https://github.com/yanbober/RNPolymerPo/raw/master/doc/online_news_page.png" alt=""></p>
-<p><img src="https://github.com/yanbober/RNPolymerPo/raw/master/doc/chart_page.png" alt=""></p>
-<h3 id="bilibili"><a href="#bilibili" class="headerlink" title="bilibili"></a>bilibili</h3><p>仿 bilibili 的客户端</p>
-<p>项目地址：<a href="https://github.com/HotBitmapGG/bilibili-android-client" target="_blank" rel="external">https://github.com/HotBitmapGG/bilibili-android-client</a></p>
-<p>运行截图：</p>
-<p> <img src="https://github.com/HotBitmapGG/bilibili-android-client/raw/master-x/art/01.png" alt=""></p>
-<p><img src="https://github.com/HotBitmapGG/bilibili-android-client/raw/master-x/art/07.png" alt=""></p>
-<p><img src="https://github.com/HotBitmapGG/bilibili-android-client/raw/master-x/art/004.png" alt=""></p>
-<h3 id="StockChart"><a href="#StockChart" class="headerlink" title="StockChart"></a>StockChart</h3><p>采用主流<code>rxjava</code>+<code>retrofit</code>+<code>dagger2</code>框架，StockChart看股票的分时图，k线图。</p>
-<p>项目地址：<a href="https://github.com/AndroidJiang/StockChart" target="_blank" rel="external">https://github.com/AndroidJiang/StockChart</a></p>
-<h3 id="Android精准计步器"><a href="#Android精准计步器" class="headerlink" title="Android精准计步器"></a>Android精准计步器</h3><p>项目地址：<a href="https://github.com/linglongxin24/DylanStepCount" target="_blank" rel="external">https://github.com/linglongxin24/DylanStepCount</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/linglongxin24/DylanStepCount/raw/master/screenshots/%E4%B8%BB%E9%A1%B5.jpg" alt=""></p>
-<p><img src="https://github.com/linglongxin24/DylanStepCount/raw/master/screenshots/%E9%94%BB%E7%82%BC%E8%AE%A1%E5%88%92.jpg" alt=""></p>
-<p><img src="https://github.com/linglongxin24/DylanStepCount/raw/master/screenshots/%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95.jpg" alt=""></p>
-<h3 id="菜鸟微博"><a href="#菜鸟微博" class="headerlink" title="菜鸟微博"></a>菜鸟微博</h3><p><a href="http://www.cniao5.com/" target="_blank" rel="external"><strong>菜鸟微博</strong></a>《通过对新浪微博开发案例的详细解析，讲解了一个完整的 Android 实际项目的开发过程。</p>
-<p>有新浪微博的主要功能，有Toolbar,RecyclerView等最新控件的用法；各种快速开发框架的使用，比如 Glide,PhotoView ，EventBus ，OKHttp，pullToRefresh等。 学习视频+源码 视频中还会讲到MVP设计模式以及一些架构师的入门知识。</p>
-<p>课程地址： <a href="http://www.cniao5.com/clazz/view/10075.html" target="_blank" rel="external">http://www.cniao5.com/clazz/view/10075.html</a><br>视频下载链接： <a href="http://pan.baidu.com/s/1gexq3VP" target="_blank" rel="external">http://pan.baidu.com/s/1gexq3VP</a> 密码：f0t9</p>
-<p>项目地址：<a href="https://github.com/yxs666/cniao5-weibo" target="_blank" rel="external">https://github.com/yxs666/cniao5-weibo</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/yxs666/cniao5-weibo/raw/master/screenshot/10.jpg" alt=""></p>
-<p><img src="https://github.com/yxs666/cniao5-weibo/raw/master/screenshot/5.jpg" alt=""></p>
-<p><img src="https://github.com/yxs666/cniao5-weibo/raw/master/screenshot/6.jpg" alt=""></p>
-<h3 id="在线云打印平台"><a href="#在线云打印平台" class="headerlink" title="在线云打印平台"></a>在线云打印平台</h3><p>一个在线云打印平台（android部分）含订单管理、百度地图、二维码等等</p>
-<p>项目地址：<a href="https://github.com/LehmanHe/A4print" target="_blank" rel="external">https://github.com/LehmanHe/A4print</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/LehmanHe/A4print/raw/master/picture/1.png" alt=""></p>
-<p><img src="https://github.com/LehmanHe/A4print/raw/master/picture/a1.png" alt=""></p>
-<p><img src="https://github.com/LehmanHe/A4print/raw/master/picture/a2.png" alt=""></p>
-<p><img src="https://github.com/LehmanHe/A4print/raw/master/picture/a4.png" alt=""></p>
-<p><img src="https://github.com/LehmanHe/A4print/raw/master/picture/a5.png" alt=""></p>
-<p><img src="https://github.com/LehmanHe/A4print/raw/master/picture/6.png" alt=""></p>
-<h3 id="铜板街"><a href="#铜板街" class="headerlink" title="铜板街"></a>铜板街</h3><p>项目地址：<a href="https://github.com/robotlife/TongBanJie" target="_blank" rel="external">https://github.com/robotlife/TongBanJie</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/robotlife/tongbanjie_picture/raw/master/%E5%BC%95%E5%AF%BC%E9%A1%B5.png" alt=""></p>
-<p><img src="https://github.com/robotlife/tongbanjie_picture/raw/master/%E9%A6%96%E9%A1%B5.png" alt=""></p>
-<p><img src="https://github.com/robotlife/tongbanjie_picture/raw/master/%E6%8A%95%E8%B5%84.png" alt=""></p>
-<p><img src="https://github.com/robotlife/tongbanjie_picture/raw/master/%E8%B4%A2%E5%AF%8C2.png" alt=""></p>
-<p><img src="https://github.com/robotlife/tongbanjie_picture/raw/master/%E4%BF%AE%E6%94%B9%E4%BA%A4%E6%98%93%E5%AF%86%E7%A0%81.png" alt=""></p>
-<p><img src="https://github.com/robotlife/tongbanjie_picture/raw/master/%E6%96%B0%E6%89%8B%E6%A0%87.png" alt=""></p>
-<h3 id="礼物说"><a href="#礼物说" class="headerlink" title="礼物说"></a>礼物说</h3><p>项目地址：<a href="https://github.com/Orangelittle/Liwusuo" target="_blank" rel="external">https://github.com/Orangelittle/Liwusuo</a></p>
-<h3 id="IotXmpp"><a href="#IotXmpp" class="headerlink" title="IotXmpp"></a>IotXmpp</h3><p>本项目是基于XMPP的物联网客户端软件的实现，其实现的主要功能是一款能和物联网节点交互的即时通讯软件。目前支持九类传感器节点交互，主要有：温湿度、风扇、直流电机、LED灯、步进电机、门磁、光电接近、烟雾和光照。<br>本软件不仅能和这些传感器节点交互，还实现了类似微信的订阅和取消订阅功能。当订阅一个节点后节点就会按照设定好的周期向客户端汇报数据，客户端也能设置周期、设置报警上下限等。这些功能的实现极大的方便了我们和物联网节点的交互。</p>
-<p>项目地址：<a href="https://github.com/tiandawu/IotXmpp" target="_blank" rel="external">https://github.com/tiandawu/IotXmpp</a></p>
-<p>项目截图：</p>
-<p><img src="https://camo.githubusercontent.com/6b26b624ce2cd266f826a7ddcbefbd555c9a737a/687474703a2f2f692e696d6775722e636f6d2f71414a676a62552e706e67" alt=""></p>
-<p><img src="https://camo.githubusercontent.com/7c5da3833d49c5a6be574e705413e7eb99775578/687474703a2f2f692e696d6775722e636f6d2f6a5457757751582e706e67" alt=""></p>
-<p><img src="https://camo.githubusercontent.com/8d865718d786c481b8ac962a97b88ed615a58ee9/687474703a2f2f692e696d6775722e636f6d2f575a6f373471472e706e67" alt=""></p>
-<h3 id="Lives"><a href="#Lives" class="headerlink" title="Lives"></a>Lives</h3><p>生活娱乐结合的APP, 现有主要功能： 图书 翻译 音乐 视频</p>
-<p>项目地址：<a href="https://github.com/Allyns/Lives" target="_blank" rel="external">https://github.com/Allyns/Lives</a></p>
-<p>项目截图：</p>
-<p><img src="https://github.com/Allyns/Lives/raw/master/img/54F171BC28ED5C6A4AEC296B3FCF19E1.png" alt=""></p>
-<p><img src="https://github.com/Allyns/Lives/raw/master/img/7505C39DFA9E3C54B6272A749CDA5125.png" alt=""></p>
-<p><img src="https://github.com/Allyns/Lives/raw/master/img/C7075614E4A7DD3AD34F62426A557E9B.png" alt=""></p>
-<h3 id="CoCoin"><a href="#CoCoin" class="headerlink" title="CoCoin"></a>CoCoin</h3><p>一款多视图记账APP</p>
-<p>项目地址：<a href="https://github.com/Nightonke/CoCoin" target="_blank" rel="external">https://github.com/Nightonke/CoCoin</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Basic.png" alt=""></p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Today.png" alt=""></p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Custom.png" alt=""></p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Tag.png" alt=""></p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Month.png" alt=""></p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_List.png" alt=""></p>
-<p><img src="https://github.com/Nightonke/CoCoin/raw/master/PNG/CoCoin_Report.png" alt=""></p>
-<h3 id="AppLock"><a href="#AppLock" class="headerlink" title="AppLock"></a>AppLock</h3><p>AppLock应用锁，保护你的隐私</p>
-<p>项目地址：<a href="https://github.com/lizixian18/AppLock" target="_blank" rel="external">https://github.com/lizixian18/AppLock</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/lizixian18/AppLock/raw/master/art/1.png" alt=""></p>
-<p><img src="https://github.com/lizixian18/AppLock/raw/master/art/2.png" alt=""></p>
-<p><img src="https://github.com/lizixian18/AppLock/raw/master/art/4.png" alt=""></p>
-<p><img src="https://github.com/lizixian18/AppLock/raw/master/art/10.png" alt=""></p>
-<h3 id="jianshi-简诗"><a href="#jianshi-简诗" class="headerlink" title="jianshi 简诗"></a>jianshi 简诗</h3><p>一款优雅的中国风Android App，包括Android端和Server端，支持登录注册，数据云端同步，离线数据存储和截屏分享等功能。</p>
-<p>项目地址：</p>
-<p>运行截图：</p>
-<p><img src="https://github.com/wingjay/jianshi/raw/master/material/screenshots/with_phone/1.PNG" alt=""></p>
-<p><img src="https://github.com/wingjay/jianshi/raw/master/material/screenshots/with_phone/2.PNG" alt=""></p>
-<p><img src="https://github.com/wingjay/jianshi/raw/master/material/screenshots/with_phone/7.PNG" alt=""></p>
-<h3 id="storage-chooser"><a href="#storage-chooser" class="headerlink" title="storage-chooser"></a>storage-chooser</h3><p>一款文件管理器app</p>
-<p>项目地址：<a href="https://github.com/codekidX/storage-chooser" target="_blank" rel="external">https://github.com/codekidX/storage-chooser</a></p>
-<p>运行截图：</p>
-<p><img src="https://camo.githubusercontent.com/6f690f12cf8f8cbf9a1e400fe73a4a3fbc075872/687474703a2f2f692e696d6775722e636f6d2f6e6d71504a6f6b2e676966" alt=""></p>
-<h3 id="LQRWeChat"><a href="#LQRWeChat" class="headerlink" title="LQRWeChat"></a><strong>LQRWeChat</strong></h3><p>仿最新版微信6.5.7（除图片选择器外）。本项目基于融云SDK，使用目前较火的 Rxjava+Retrofit+MVP+Glide 技术开发。相比上个版本，加入发送位置消息，红包消息等功能。</p>
-<p>项目地址：<a href="https://github.com/GitLqr/LQRWeChat" target="_blank" rel="external">https://github.com/GitLqr/LQRWeChat</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/1.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/3.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/4.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/5.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/6.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/7.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/8.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/9.gif" alt=""></p>
-<p><img src="https://github.com/GitLqr/LQRWeChat/raw/master/screenshots/13.gif" alt=""></p>
-<h3 id="PonyExpress-小马快递"><a href="#PonyExpress-小马快递" class="headerlink" title="PonyExpress  小马快递"></a>PonyExpress  小马快递</h3><p>小马快递，您的好帮手。查询并跟踪快递，快递信息及时掌握。支持全国100多家快递公司，支持扫码查询，智能识别快递公司。附带生成二维码小工具，方便实用。体积小巧，无广告，无多余权限。</p>
-<p>项目地址：<a href="https://github.com/wangchenyan/PonyExpress" target="_blank" rel="external">https://github.com/wangchenyan/PonyExpress</a></p>
-<p>运行截图：</p>
-<p><img src="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_01.jpg" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_02.jpg" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_04.jpg" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/wangchenyan/PonyExpress/master/art/screenshot_05.jpg" alt=""></p>
-<h3 id="CloudReader-云阅"><a href="#CloudReader-云阅" class="headerlink" title="CloudReader  云阅"></a><strong>CloudReader</strong>  云阅</h3><p>一款基于网易云音乐UI，使用Gank.Io及豆瓣api开发的符合Google Material Design的Android客户端。项目采取的是MVVM-DataBinding架构开发，现主要包括：干货区、电影区和书籍区三个子模块。DIY网易云音乐原来是如此Cool</p>
-<p>项目地址：<a href="https://github.com/youlookwhat/CloudReader" target="_blank" rel="external">https://github.com/youlookwhat/CloudReader</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/youlookwhat/CloudReader/raw/master/file/cloudreader.gif" alt=""></p>
-<p><img src="https://github.com/youlookwhat/CloudReader/raw/master/file/page_gank_00.png" alt=""></p>
-<p><img src="https://github.com/youlookwhat/CloudReader/raw/master/file/page_movie_01.png" alt=""></p>
-<p><img src="https://github.com/youlookwhat/CloudReader/raw/master/file/page_movie_03.png" alt=""></p>
-<p><img src="https://github.com/youlookwhat/CloudReader/raw/master/file/page_menu_01.png" alt=""></p>
-<h3 id="硅谷商城"><a href="#硅谷商城" class="headerlink" title="硅谷商城"></a>硅谷商城</h3><p>是一款按照企业级标准研发的项目。本套代码是目前国内市场第一套详细讲解商城类项目的免费代码。该代码中的内容包括但不仅限于，框架的搭建 、主页模块、分类模块、发现模块、购物车模块和个人中心模块。项目中讲解的主流技术包括且不限于RadioGroup + Fragment、OKHttp、FastJson、RecyclerView、 ScrollViewContainer、Banner、倒计时秒杀、自定义购物车、支付宝等技术。该项目中讲解的技术可应用在电商、新闻、旅游、医疗、在线教育等领域。</p>
-<p>项目地址：<a href="https://github.com/atguigu01/Shopping" target="_blank" rel="external">https://github.com/atguigu01/Shopping</a></p>
-<p>运行截图：</p>
-<p><img src="https://github.com/atguigu01/Shopping/raw/master/gif/%E7%A1%85%E8%B0%B7%E5%95%86%E5%9F%8E%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA.gif" alt=""></p>
-<hr>
-<p>觉得棒的，欢迎点赞和转发分享，谢谢大家！转载的话注明来源地址为 <a href="www.54tianzhisheng.cn/2017/05/13/android-projects/">www.54tianzhisheng.cn/2017/05/13/android-projects/</a> 即可。</p>
+        <p>由于星期一接到面试通知，和面试官约好了星期四面试，所以这几天没更新完这系列的文章，面完试后立马就把这个解决掉。通过这次面试，也让我懂得了很多，知道了自己的一些不足之处，后面还要继续下功夫好好的深入复习下去。这几篇文章写的我觉得还是不够仔细，感兴趣的还是建议自己去看看源码。</p>
+<h3 id="第-11-章-——-组件概览"><a href="#第-11-章-——-组件概览" class="headerlink" title="第 11 章  ——  组件概览"></a>第 11 章  ——  组件概览</h3><p><strong>HandlerMapping</strong></p>
+<p>根据 request 找到对应的处理器 Handler 和 Interceptors。内部只有一个方法<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">HandlerExecutionChain <span class="title">getHandler</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> Exception</span>;</div></pre></td></tr></table></figure></p>
+<p><strong>HandlerAdapter</strong></p>
+<p>Handler 适配器，内部方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">supports</span><span class="params">(Object handler)</span></span>;<span class="comment">//判断是否可以使用某个 Handler</span></div><div class="line"><span class="function">ModelAndView <span class="title">handle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception</span>; <span class="comment">//具体使用</span></div><div class="line"><span class="function"><span class="keyword">long</span> <span class="title">getLastModified</span><span class="params">(HttpServletRequest request, Object handler)</span></span>;<span class="comment">//获取资源上一次修改的时间</span></div></pre></td></tr></table></figure>
+<p><strong>HandlerExceptionResolver</strong></p>
+<p>根据异常设置 ModelAndView ，再交给 render 方法进行渲染。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function">ModelAndView <span class="title">resolveException</span><span class="params">(</span></span></div><div class="line">			HttpServletRequest request, HttpServletResponse response, @Nullable Object handler, Exception ex)</div></pre></td></tr></table></figure>
+<p><strong>ViewResolver</strong></p>
+<p>用来将 String 类型的视图名和 Locale 解析为 View 类型的视图。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">View <span class="title">resolveViewName</span><span class="params">(String viewName, Locale locale)</span> <span class="keyword">throws</span> Exception</span>;</div></pre></td></tr></table></figure>
+<p>它的一个实现类 BeanNameViewResolver，它重写 resolveViewName 方法如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">resolveViewName</span><span class="params">(String viewName, Locale locale)</span> <span class="keyword">throws</span> BeansException </span>&#123;</div><div class="line">		ApplicationContext context = getApplicationContext();</div><div class="line">		<span class="comment">//如果应用上下文没有找到视图，返回 null</span></div><div class="line">		<span class="keyword">if</span> (!context.containsBean(viewName)) &#123;</div><div class="line">			<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</div><div class="line">				logger.debug(<span class="string">"No matching bean found for view name '"</span> + viewName + <span class="string">"'"</span>);</div><div class="line">			&#125;</div><div class="line">			<span class="comment">// Allow for ViewResolver chaining...</span></div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//如果找到的视图类型不匹配，也返回 null</span></div><div class="line">		<span class="keyword">if</span> (!context.isTypeMatch(viewName, View.class)) &#123;</div><div class="line">			<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</div><div class="line">				logger.debug(<span class="string">"Found matching bean for view name '"</span> + viewName +</div><div class="line">						<span class="string">"' - to be ignored since it does not implement View"</span>);</div><div class="line">			&#125;</div><div class="line">			<span class="comment">// Since we're looking into the general ApplicationContext here,</span></div><div class="line">			<span class="comment">// let's accept this as a non-match and allow for chaining as well...</span></div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//根据视图名称从 Spring 容器中查找 Bean，返回找到的 bean</span></div><div class="line">		<span class="keyword">return</span> context.getBean(viewName, View.class);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p><strong>RequestToViewNameTranslator</strong></p>
+<p>获取 request 中的视图名。接口里面也是只有一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">String <span class="title">getViewName</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> Exception</span>; <span class="comment">//根据 request 查找视图名</span></div></pre></td></tr></table></figure>
+<p><strong>LocaleResolver</strong></p>
+<p>用于从 request 解析出 Locale。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LocaleResolver</span> </span>&#123;</div><div class="line">  	<span class="comment">//从 request 解析出 Locale</span></div><div class="line">	<span class="function">Locale <span class="title">resolveLocale</span><span class="params">(HttpServletRequest request)</span></span>;</div><div class="line">  	<span class="comment">//根据 request 设置  locale</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setLocale</span><span class="params">(HttpServletRequest request, HttpServletResponse response, @Nullable Locale locale)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>ThemeResolver</strong></p>
+<p>解析主题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ThemeResolver</span> </span>&#123;</div><div class="line">	<span class="comment">//通过给定的 request 查找主题名</span></div><div class="line">	<span class="function">String <span class="title">resolveThemeName</span><span class="params">(HttpServletRequest request)</span></span>;</div><div class="line">	<span class="comment">//根据给定的 request 设置主题名</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setThemeName</span><span class="params">(HttpServletRequest request, HttpServletResponse response, String themeName)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在 RequestContext.java 文件中可以获取主题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getThemeMessage</span><span class="params">(String code, String defaultMessage)</span> </span>&#123;</div><div class="line">		<span class="comment">//获取主题的信息</span></div><div class="line">		<span class="keyword">return</span> getTheme().getMessageSource().getMessage(code, <span class="keyword">null</span>, defaultMessage, <span class="keyword">this</span>.locale);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> Theme <span class="title">getTheme</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">//判断主题是否为空</span></div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.theme == <span class="keyword">null</span>) &#123;</div><div class="line">			<span class="comment">// 通过 RequestContextUtils 获取 request 中的主题名</span></div><div class="line">			<span class="keyword">this</span>.theme = RequestContextUtils.getTheme(<span class="keyword">this</span>.request);</div><div class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>.theme == <span class="keyword">null</span>) &#123;	<span class="comment">//如果还是为空的话</span></div><div class="line">				<span class="comment">//那就是没有有效的主题解析器和主题</span></div><div class="line">				<span class="keyword">this</span>.theme = getFallbackTheme();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.theme;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>RequestContextUtils.getTheme() 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Theme <span class="title">getTheme</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</div><div class="line">		ThemeResolver themeResolver = getThemeResolver(request);</div><div class="line">		ThemeSource themeSource = getThemeSource(request);</div><div class="line">		<span class="keyword">if</span> (themeResolver != <span class="keyword">null</span> &amp;&amp; themeSource != <span class="keyword">null</span>) &#123;</div><div class="line">			String themeName = themeResolver.resolveThemeName(request);</div><div class="line">			<span class="keyword">return</span> themeSource.getTheme(themeName);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p><strong>MultipartResolver</strong></p>
+<p>用于处理上传请求，处理方法：将普通的 request 包装成 MultipartHttpServletRequest</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MultipartResolver</span> </span>&#123;</div><div class="line">	<span class="comment">//根据 request 判断是否是上传请求</span></div><div class="line">	<span class="function"><span class="keyword">boolean</span> <span class="title">isMultipart</span><span class="params">(HttpServletRequest request)</span></span>;</div><div class="line">	<span class="comment">//将 request 包装成 MultipartHttpServletRequest</span></div><div class="line">	<span class="function">MultipartHttpServletRequest <span class="title">resolveMultipart</span><span class="params">(HttpServletRequest request)</span> <span class="keyword">throws</span> MultipartException</span>;</div><div class="line">	<span class="comment">//清理上传过程中产生的临时资源</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">cleanupMultipart</span><span class="params">(MultipartHttpServletRequest request)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>FlashMapManager</strong></p>
+<p>FlashMap 主要在 redirect 中传递参数，FlashMapManager 用来管理  FlashMap 的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FlashMapManager</span> </span>&#123;</div><div class="line">	<span class="comment">//恢复参数，并将恢复过的和超时的参数从保存介质中删除</span></div><div class="line">	<span class="meta">@Nullable</span></div><div class="line">	<span class="function">FlashMap <span class="title">retrieveAndUpdate</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span>;</div><div class="line">	<span class="comment">//将参数保存起来</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">saveOutputFlashMap</span><span class="params">(FlashMap flashMap, HttpServletRequest request, HttpServletResponse response)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>介绍 Spring MVC 中九大组件的接口、作用、内部方法实现及作用进行了简单的介绍，详细的还需大家自己去看源码。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h3 id="Spring-MVC-原理总结"><a href="#Spring-MVC-原理总结" class="headerlink" title="Spring MVC 原理总结"></a>Spring MVC 原理总结</h3><p>本质是一个 Servlet，这个 Servlet 继承自 HttpServlet。Spring MVC 中提供了三个层次的 Servlet：HttpServletBean、FrameworkServlet 和 DispatcherServlet。他们相互继承， HttpServletBean 直接继承自 Java 的 HttpServlet。HttpServletBean 用于将 Servlet 中的 Servlet 中配置的参数设置到相应的属性中，FrameworkServlet 初始化了 Spring MVC 中所使用的 WebApplicationContext，具体处理请求的 9 大组件是在 DispatcherServlet 中初始化的，整个继承图如下：</p>
+<p><img src="http://ohfk1r827.bkt.clouddn.com/spring-mvc1.jpg" alt="spring-mvc1"></p>
 
       
 
@@ -490,7 +304,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring MVC</a>
         		</li>
       		
 		</ul>
@@ -546,7 +360,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQY6DMAwF0Ln/pTvbkTqk306oRPJYVRUFHgs39s/PT3y83o78/L/fvH8e/2rxgYGB8VjGa3iMz1l1l+p9/7k7BgbGAYyrG1+dc3W5vLAmv8qvgIGBgTH+PC7B42JafX0YGBgY1YKbNK7jb/LWFwMDAyNpJqv43qDt9l4cAwPjgYx8WPb9z7fkGxgYGI9izAzrkya2uljsHRgYGHsz8gKX3D652qqCi4GBgZFElb21WRWQBKUYGBjnMPIylwBmxm3NcAIDA+MYxqpIoBpbVgt9Id/AwMDYiPHNuHFtRIqBgXEaIxn39+LPvBkuPDoGBsaRjPnRWx5tVpvVqInFwMDYlJEv7PItF3kTO/MiMDAwzmRUR2C9ZWX1NRWKPgYGxgGMZFg2xs9ssOgtJTEwMPZm9B5xvq2tBgwfMBgYGFszqjP2May3seyOIAEDA2NXxqoHqo71C0P/BImBgbEpY36gXy3K1cVfVNwxMDCOYeRFs9rQJgO4hHH5DBgYGMcw8i0XyZJuZgNHdXiHgYFxAmNVGrhqlJaHrBgYGHszXsUj35xR3RxWbVyb/xgYGBgPZPSKXR4n9B4lP7+MwcDAeCxjptVMlpLVhWAhDMj/ATAwMLZg9ILJXlQw0wxfnomBgYFxxyg/vjsGBgbGTMGdaV9ntp19yDcwMDA2ZeQbLJJctLr4y+OEy2tiYGBszZhpHauxZfIQeeSJgYFxAOMXIDANyxxfg+gAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aS26EQAxFUfa/aTJtie7SfTZEKnNrFBF+h0iO7fJx4HVe1ufx9fnXM6+/XR+/bcmQIWNbxrlc5AHkOL8/uerLE2XIkPECBnmJX+eTFyIfjjzr53EZMmTIAOkaf2l+HxkyZMjoM9bpY+eIDBkyZNSK2FqzLG3PPV6Ly5AhY0MG77r//8+P7G/IkCFjK8YZrrSIrSWC8VvJkCFjNCNtpfXDZbFABe8jQ4aM2Yzaa63Da22T8oZBMRkyZIxj8BQwHZ7gQbZ/rQwZMt7G4JuUaRhNm2jBZ5UhQ8ZoRvqYs7H4iAb/KDJkyHgDIx1rWD+M4zv7kkftf4IMGTK2ZaSp2BNl7fr89LPKkCFjKqPfYksHLB4sYmXIkDGOkYZXXhmn4ZinofHfQYYMGeMYvGVWS/JqeDRsIUOGjKEM0oAjt6uNa/DwGjf7ZMiQMY6xDmfpIBdPOmujYMF/DxkyZIxgkEZ8P2kj7Ta0d7EetpAhQ8ZQRj/tS0e++NBYepUMGTJmM3iY442zfhEbp60yZMh4DSNN6XhC2d/sfGRmRIYMGVsxeLisNdr4BmexGJYhQ8ZQxhmutLjlH6hG/dI1lCFDxjgGX2njvjP3kQ5kyJAh4w0MXmryNlwadm9IH2XIkPECRu0Va2Unb7cFRbIMGTJk4MDX32Yo3keGDBkywqYYGa3obJHGO7EyZMgYwaiNRKTjp7XyFYVdGTJkjGakiRrfvOxvM/SvkiFDxuaMP+1RDctJYg50AAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -560,18 +374,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/05/31/Java-16-lession/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《疯狂 Java 突破程序员基本功的 16 课》读书笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/11/poetry/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">最近很火的鸡汤，分享给大家</div>
+    <a href="/2017/07/14/Spring-MVC02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">看透 Spring MVC 源代码分析与实践 ——  俯视 Spring MVC</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -590,7 +395,7 @@
 
   <section id="comments">
 <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS" sid="源码大招：不服来战！撸这些完整项目，你不牛逼都难！"  style="padding: 0px 30px 0px 46px;"></div>
+<div id="SOHUCS" sid="看透 Spring MVC 源代码分析与实践 ——  Spring MVC 组件分析"  style="padding: 0px 30px 0px 46px;"></div>
 <script>
   (function(){
     var appid = 'cysWCg9Ij',
