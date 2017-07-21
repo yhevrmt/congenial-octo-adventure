@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-21T02:44:08.090Z</updated>
+  <updated>2017-07-21T02:49:06.077Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/21/Spring-MVC03/"/>
     <id>http://yoursite.com/2017/07/21/Spring-MVC03/</id>
     <published>2017-07-21T02:34:05.009Z</published>
-    <updated>2017-07-21T02:44:08.090Z</updated>
+    <updated>2017-07-21T02:49:06.077Z</updated>
     
     <content type="html"><![CDATA[<p>由于星期一接到面试通知，和面试官约好了星期四面试，所以这几天没更新完这系列的文章，面完试后立马就把这个解决掉。通过这次面试，也让我懂得了很多，知道了自己的一些不足之处，后面还要继续下功夫好好的深入复习下去。这几篇文章写的我觉得还是不够仔细，感兴趣的还是建议自己去看看源码。</p>
 <h3 id="第-11-章-——-组件概览"><a href="#第-11-章-——-组件概览" class="headerlink" title="第 11 章  ——  组件概览"></a>第 11 章  ——  组件概览</h3><p><strong>HandlerMapping</strong></p>
@@ -58,6 +58,7 @@
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>介绍 Spring MVC 中九大组件的接口、作用、内部方法实现及作用进行了简单的介绍，详细的还需大家自己去看源码。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h3 id="Spring-MVC-原理总结"><a href="#Spring-MVC-原理总结" class="headerlink" title="Spring MVC 原理总结"></a>Spring MVC 原理总结</h3><p>本质是一个 Servlet，这个 Servlet 继承自 HttpServlet。Spring MVC 中提供了三个层次的 Servlet：HttpServletBean、FrameworkServlet 和 DispatcherServlet。他们相互继承， HttpServletBean 直接继承自 Java 的 HttpServlet。HttpServletBean 用于将 Servlet 中的 Servlet 中配置的参数设置到相应的属性中，FrameworkServlet 初始化了 Spring MVC 中所使用的 WebApplicationContext，具体处理请求的 9 大组件是在 DispatcherServlet 中初始化的，整个继承图如下：</p>
 <p><img src="http://ohfk1r827.bkt.clouddn.com/spring-mvc1.jpg" alt="spring-mvc1"></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>文章可转发，但请注明原创地址，谢谢支持。</p>
 ]]></content>
     
     <summary type="html">
