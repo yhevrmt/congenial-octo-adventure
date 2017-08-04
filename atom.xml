@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-29T14:45:24.452Z</updated>
+  <updated>2017-08-04T03:38:20.340Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,160 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>秋招第三站 —— 内推阿里（一面）</title>
+    <link href="http://yoursite.com/2017/08/04/alibaba/"/>
+    <id>http://yoursite.com/2017/08/04/alibaba/</id>
+    <published>2017-08-04T03:36:52.742Z</published>
+    <updated>2017-08-04T03:38:20.340Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="3、阿里巴巴（菜鸟网络部门）（一面-49-分钟）"><a href="#3、阿里巴巴（菜鸟网络部门）（一面-49-分钟）" class="headerlink" title="3、阿里巴巴（菜鸟网络部门）（一面 49 分钟）"></a>3、阿里巴巴（菜鸟网络部门）（一面 49 分钟）</h3><p>2017.08.02   晚上9点21打电话过来，预约明天什么时候有空面试，约好第二天下午两点。</p>
+<p>2017.08.03   下午两点10分打过来了。</p>
+<p>说看了我的<a href="http://www.54tianzhisheng.cn/" target="_blank" rel="external">博客</a>和 <a href="https://github.com/zhisheng17" target="_blank" rel="external">GitHub</a>，觉得我学的还行，知识广度都还不错，但是还是要问问具体情况，为什么没看到你春招的记录，什么原因没投阿里？非得说一个原因，那就是：我自己太菜了，不敢投。<br><a id="more"></a><br>1、先自我介绍</p>
+<p>2、什么是多态？哪里体现了多态的概念？</p>
+<p>3、HashMap 源码分析，把里面的东西问了个遍？最后问是不是线程安全？引出 ConcurrentHashMap</p>
+<p>4、ConcurrentHashMap 源码分析</p>
+<p>5、类加载，双亲委托机制</p>
+<p>6、Java内存模型（一开始说的不是他想要的，主要想问我堆和栈的细节）</p>
+<p>7、垃圾回收算法</p>
+<p>8、线程池，自己之前看过，所以说的比较多，最后面试官说了句：看你对线程池了解还是很深了</p>
+<p>9、事务的四种特性</p>
+<p>10、什么是死锁？</p>
+<p>11、乐观锁和悲观锁的策略</p>
+<p>12、高可用网站的设计（有什么技术实现）</p>
+<p>13、低耦合高内聚</p>
+<p>14、设计模式了解不？你用过哪几种，为什么用，单例模式帮我们做什么东西？有什么好处？</p>
+<p>15、你参与什么项目中成长比较快？学到了什么东西，以前是没有学过的？</p>
+<p>16、项目中遇到的最大困难是怎样的？是怎么解决的？</p>
+<p>17、智力题（两根不均匀的香，点一头烧完要一个小时，怎么确定15分钟）</p>
+<p>18、你有什么问题想要问我的？</p>
+<p>19、问了菜鸟网络他们部门主要做什么？</p>
+<p>20、对我这次面试做个评价：看了你<a href="http://www.54tianzhisheng.cn/" target="_blank" rel="external">博客</a>和 <a href="https://github.com/zhisheng17" target="_blank" rel="external">GitHub</a>，知道你对学习的热情还是很高的，花了不少功夫，但是有些东西还是需要加强深度，阿里需要那种对技术有深度，有自己独到见解的人才。意思就是 GG 了。</p>
+<p><strong>总结</strong>：面试总的来说，第一次电话面试，感觉好紧张，好多问题自己会点，但是其中的细节没弄清楚，自己准备的也不够充分。面试官很友好，看到我紧张，也安慰我说不要紧，不管以后出去面试啥的，不需要紧张，公司问的问题可能很广，你只需要把你知道的说出来就行，不会的直接说不会就行。之前一直不敢投阿里，因为自己准备的完全不够充分，但是在朋友磊哥的帮助下，还是试了下，不管结果怎么样，经历过总比没有的好。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;3、阿里巴巴（菜鸟网络部门）（一面-49-分钟）&quot;&gt;&lt;a href=&quot;#3、阿里巴巴（菜鸟网络部门）（一面-49-分钟）&quot; class=&quot;headerlink&quot; title=&quot;3、阿里巴巴（菜鸟网络部门）（一面 49 分钟）&quot;&gt;&lt;/a&gt;3、阿里巴巴（菜鸟网络部门）（一面 49 分钟）&lt;/h3&gt;&lt;p&gt;2017.08.02   晚上9点21打电话过来，预约明天什么时候有空面试，约好第二天下午两点。&lt;/p&gt;
+&lt;p&gt;2017.08.03   下午两点10分打过来了。&lt;/p&gt;
+&lt;p&gt;说看了我的&lt;a href=&quot;http://www.54tianzhisheng.cn/&quot;&gt;博客&lt;/a&gt;和 &lt;a href=&quot;https://github.com/zhisheng17&quot;&gt;GitHub&lt;/a&gt;，觉得我学的还行，知识广度都还不错，但是还是要问问具体情况，为什么没看到你春招的记录，什么原因没投阿里？非得说一个原因，那就是：我自己太菜了，不敢投。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="面经" scheme="http://yoursite.com/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>秋招第二站 —— 内推爱奇艺（一面二面）</title>
+    <link href="http://yoursite.com/2017/08/04/iqiyi/"/>
+    <id>http://yoursite.com/2017/08/04/iqiyi/</id>
+    <published>2017-08-04T03:34:33.403Z</published>
+    <updated>2017-08-04T04:34:52.703Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="第-2-站-、爱奇艺-后端-Java-开发实习生"><a href="#第-2-站-、爱奇艺-后端-Java-开发实习生" class="headerlink" title="第 2 站 、爱奇艺   后端 Java 开发实习生"></a>第 2 站 、爱奇艺   后端 Java 开发实习生</h3><h4 id="笔试（半个小时）"><a href="#笔试（半个小时）" class="headerlink" title="笔试（半个小时）"></a>笔试（半个小时）</h4><p>题目：（记得一些）</p>
+<p>1、重载重写的区别？</p>
+<p>2、转发和重定向的区别？<br><a id="more"></a><br>3、画下 HashMap 的结构图？HashMap 、 HashTable 和 ConcurrentHashMap 的区别？</p>
+<p>4、statement 和 preparedstatement 区别？</p>
+<p>5、JSP 中一个 <c:value> 中取值与直接取值的区别？会有什么安全问题？</c:value></p>
+<p>6、实现一个线程安全的单例模式</p>
+<p>7、一个写 sql 语句的题目</p>
+<p>8、自己实现一个 List，（主要实现 add等常用方法）</p>
+<p>9、Spring 中 IOC 和 AOP 的理解？</p>
+<p>10、两个对象的 hashcode 相同，是否对象相同？equal() 相同呢？</p>
+<p>11、@RequestBody 和 @ResponseBody 区别？</p>
+<p>12、JVM 一个错误，什么情况下会发生？</p>
+<p>13、常用的 Linux 命令？</p>
+<h4 id="第一轮面试（80-分钟）"><a href="#第一轮面试（80-分钟）" class="headerlink" title="第一轮面试（80 分钟）"></a>第一轮面试（80 分钟）</h4><p>1、自我介绍</p>
+<p>2、介绍你最熟悉的一个项目</p>
+<p>3、讲下这个 XSS 攻击</p>
+<p>4、HashMap 的结构？HashMap 、 HashTable 和 ConcurrentHashMap 的区别？</p>
+<p>5、HashMap 中怎么解决冲突的？（要我详细讲下）</p>
+<p>6、ConcurrentHashMap 和 HashTable 中线程安全的区别？为啥建议用 ConcurrentHashMap ？能把 ConcurrentHashMap  里面的实现详细的讲下吗？</p>
+<p>7、Session 和 Cookie 的区别？</p>
+<p>8、你项目中登录是怎样做的，用的 Cookie 和 Session？</p>
+<p>9、讲讲你对 Spring 中的 IOC 和 AOP 的理解？</p>
+<p>10、问了好几个注解的作用？</p>
+<p>11、statement 和 preparedstatement 区别？</p>
+<p>12、$ 和 # 的区别？以及这两个在哪些地方用？</p>
+<p>13、前面项目介绍了数据是爬虫爬取过来的，那你讲讲你的爬虫是多线程的吧？</p>
+<p>14、讲讲 Python 中的多线程和 Java 中的多线程区别？</p>
+<p>15、自己刚好前几天在看线程池，立马就把面试官带到我熟悉的线程池，和面试官讲了下 JDK 自带的四种线程池、ThreadPoolExecutor 类中的最重要的构造器里面的七个参数，然后再讲了下线程任务进入线程池和核心线程数、缓冲队列、最大线程数量比较。</p>
+<p>16、线程同步，你了解哪几种方式？</p>
+<p>17、讲下 Synchronized？</p>
+<p>18、讲下 RecentLock 可重入锁？ 什么是可重入锁？为什么要设计可重入锁？</p>
+<p>19、讲下 Volatile 吧？他是怎样做到同步的？</p>
+<p>20、Volatile 为什么不支持原子性？举个例子</p>
+<p>21、Atomic 怎么设计的？（没看过源码，当时回答错了，后来才发现里面全部用 final 修饰的属性和方法）</p>
+<p>22、问几个前端的标签吧？（问了一个不会，直接说明我偏后端，前端只是了解，后面就不问了）</p>
+<p>23、SpringBoot 的了解？</p>
+<p>24、Linux 常用命令？</p>
+<p>25、JVM 里的几个问题？</p>
+<p>26、事务的特性？</p>
+<p>27、隔离级别？</p>
+<p>28、网络状态码？以 2、3、4、5 开头的代表什么意思。</p>
+<p>29、并发和并行的区别？</p>
+<p>30、你有什么问题想问我的？</p>
+<p>一面面完后面试官和说这份试卷是用来考 1~3 年开发工作经验的，让我准备一下，接下来的二面。</p>
+<h4 id="第二轮面试（半个小时）"><a href="#第二轮面试（半个小时）" class="headerlink" title="第二轮面试（半个小时）"></a>第二轮面试（半个小时）</h4><p>1、一上来就问怎么简历名字都没有，我指了简历第一行的我的名字，还特意大写了，然后就问学校是不是在上海，我回答在南昌（感觉被鄙视了一波，后面我在回答问题的时候面试官就一直在玩手机，估计后面对我的印象就不是很好了）</p>
+<p>2、自我介绍</p>
+<p>3、说一说数据库建表吧（从范式讲）</p>
+<p>4、讲讲多态？（这个我答出来了，可是面试官竟然说不是这样吧，可能面试官没听请，后面还说我是不是平时写多态比较少，感觉这个也让面试官对我印象减分）</p>
+<p>5、将两个数转换（不借助第三个参数）</p>
+<p>6、手写个插入排序吧（写完了和面试官讲了下执行流程）</p>
+<p>7、讲讲你对 Spring 中的 IOC 和 AOP 的理解？</p>
+<p>8、问了几个常用的 Linux 命令？</p>
+<p>9、也问到多线程？和一面一样把自己最近看的线程池也讲了一遍</p>
+<p>10、学 Java 多久了？</p>
+<p>11、你有什么想问的？</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>面试题目大概就是这么多了，有些问题自己也忘记了，面试题目顺序不一定是按照上面所写的。再次感谢爱奇艺的第一面面试官了，要不是他帮忙内推的，我可能还没有机会收到面试机会。自己接到爱奇艺面试邀请电话是星期一晚上快7点中的，之后加了面试官微信约好了星期四面试的（时间准备较短，之前没系统的复习过）。星期四一大早（5点就起床了），然后就收拾了下，去等公交车，转了两次车，然后再做地铁去爱奇艺公司的，总共路上花费时间四个多小时。总的来说，这次面试准备的时间不是很充裕，所以准备的个人觉得不是很好，通过这次的面试，发现面试还是比较注重基础和深度的，我也知道了自己的一些弱处，还需要在哪里加强，面试技巧上也要掌握些。为后面的其他公司继续做好充足的准备。加油！！！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;第-2-站-、爱奇艺-后端-Java-开发实习生&quot;&gt;&lt;a href=&quot;#第-2-站-、爱奇艺-后端-Java-开发实习生&quot; class=&quot;headerlink&quot; title=&quot;第 2 站 、爱奇艺   后端 Java 开发实习生&quot;&gt;&lt;/a&gt;第 2 站 、爱奇艺   后端 Java 开发实习生&lt;/h3&gt;&lt;h4 id=&quot;笔试（半个小时）&quot;&gt;&lt;a href=&quot;#笔试（半个小时）&quot; class=&quot;headerlink&quot; title=&quot;笔试（半个小时）&quot;&gt;&lt;/a&gt;笔试（半个小时）&lt;/h4&gt;&lt;p&gt;题目：（记得一些）&lt;/p&gt;
+&lt;p&gt;1、重载重写的区别？&lt;/p&gt;
+&lt;p&gt;2、转发和重定向的区别？&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="面经" scheme="http://yoursite.com/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>秋招第一站 —— 亚信科技</title>
+    <link href="http://yoursite.com/2017/08/04/yaxin/"/>
+    <id>http://yoursite.com/2017/08/04/yaxin/</id>
+    <published>2017-08-04T03:30:50.681Z</published>
+    <updated>2017-08-04T03:31:32.737Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="第-1-站、亚信科技-Java-开发"><a href="#第-1-站、亚信科技-Java-开发" class="headerlink" title="第 1 站、亚信科技    Java 开发"></a>第 1 站、亚信科技    Java 开发</h3><p>1）自我介绍（说到一个亮点：长期坚持写博客，面试官觉得这个习惯很好，算加分项吧）</p>
+<p>2）看到简历项目中用到 Solr，详细的问了下 Solr（自己介绍了下 Solr 的使用场景和建立索引等东西）<br><a id="more"></a><br>3）项目里面写了一个 “ 敏感词和 JS 标签过滤防 XSS 攻击”，面试官让我讲了下这个 XSS 攻击，并且是怎样实现的</p>
+<p>4）项目里写了支持 Markdown，问是不是自己写的解析代码，（回答不是，自己引用的是 GitHub上的一个开源项目解析的）</p>
+<p>5）想问我前端的知识，我回复到：自己偏后端开发，前端只是了解，然后面试官就不问了</p>
+<p>6）问我考不考研？</p>
+<p>7）觉得杭州怎么样？是打算就呆在杭州还是把杭州作为一个跳板？</p>
+<p>8）有啥小目标？以后是打算继续技术方向，还是先技术后管理（还开玩笑的说：是不是赚他几个亿，当时我笑了笑）</p>
+<p>9）有啥兴趣爱好？</p>
+<p>大概就记得这么多了，目前已经拿到 Offer 了。</p>
+<p><strong>总结</strong>：面试问的问题不算多，主要是通过简历上项目所涉及的东西提问的，如果自己不太会的切记不要写上去。面试主要考察你回答问题来判断你的逻辑是否很清楚。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;第-1-站、亚信科技-Java-开发&quot;&gt;&lt;a href=&quot;#第-1-站、亚信科技-Java-开发&quot; class=&quot;headerlink&quot; title=&quot;第 1 站、亚信科技    Java 开发&quot;&gt;&lt;/a&gt;第 1 站、亚信科技    Java 开发&lt;/h3&gt;&lt;p&gt;1）自我介绍（说到一个亮点：长期坚持写博客，面试官觉得这个习惯很好，算加分项吧）&lt;/p&gt;
+&lt;p&gt;2）看到简历项目中用到 Solr，详细的问了下 Solr（自己介绍了下 Solr 的使用场景和建立索引等东西）&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="面经" scheme="http://yoursite.com/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 线程池艺术探索</title>
@@ -1952,346 +2106,6 @@
     
     
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 性能调优需要格外注意的细节</title>
-    <link href="http://yoursite.com/2017/04/30/Java-performance-tuning/"/>
-    <id>http://yoursite.com/2017/04/30/Java-performance-tuning/</id>
-    <published>2017-04-30T05:20:06.291Z</published>
-    <updated>2017-07-25T14:29:04.587Z</updated>
-    
-    <content type="html"><![CDATA[<p>昨天写了篇文章 <a href="http://www.54tianzhisheng.cn/2017/04/29/MySQL-select-good/" target="_blank" rel="external">《MySQL 处理海量数据时的一些优化查询速度方法》</a> ，其实开发中不止数据库要优化，还有我们本身的开发代码也需要优化，这样我们开发的产品才能够得到极致的体验。也许有些人认为这些细小的地方没有啥好修改的，改与不改对运行效率没啥大的影响？首先在我们本地一个人测试下效率是不怎么明显，但是如果到发布上线后，你的用户有几百万，甚至上千万，这些用户同时访问你的网站，那么你的网站是否经得住考验呢，效率那高不高呢，如果效率不高，那么需要多出很多买服务器的经费呢，所以想想还是很有必要注意这些小的细节。今天就讲讲一些 Java 性能调优需要格外注意的一些细节。</p>
-<p>代码优化的目标：</p>
-<ul>
-<li>减少代码的体积</li>
-<li>提高代码的运行效率</li>
-</ul>
-<a id="more"></a>
-<h3 id="代码优化细节"><a href="#代码优化细节" class="headerlink" title="代码优化细节"></a>代码优化细节</h3><p>1、尽量指定类、方法的final修饰符</p>
-<p>带有final修饰符的类是不可派生的。在Java核心API中，有许多应用final的例子，例如java.lang.String，整个类都是final的。为类指定final修饰符可以让类不可以被继承，为方法指定final修饰符可以让方法不可以被重写。如果指定了一个类为final。Java编译器会寻找机会内联所有的final方法，内联对于提升Java运行效率作用重大，具体参见Java运行期优化。 此举能够使性能平均提高50% 。</p>
-<p>2、尽量重用对象</p>
-<p>特别是String对象的使用，出现字符串连接时应该使用StringBuilder/StringBuffer代替。由于Java虚拟机不仅要花时间生成对象，以后可能还需要花时间对这些对象进行垃圾回收和处理，因此，生成过多的对象将会给程序的性能带来很大的影响。</p>
-<p>3、尽可能使用局部变量</p>
-<p>调用方法时传递的参数以及在调用中创建的临时变量都保存在栈中速度较快，其他变量，如静态变量、实例变量等，都在堆中创建，速度较慢。另外，栈中创建的变量，随着方法的运行结束，这些内容就没了，不需要额外的垃圾回收。</p>
-<p>4、及时关闭流</p>
-<p>Java编程过程中，进行数据库连接、I/O流操作时务必小心，在使用完毕后，及时关闭以释放资源。因为对这些大对象的操作会造成系统大的开销，稍有不慎，将会导致严重的后果。</p>
-<p>5、尽量减少对变量的重复计算</p>
-<p>明确一个概念，对方法的调用，即使方法中只有一句语句，也是有消耗的，包括创建栈帧、调用方法时保护现场、调用方法完毕时恢复现场等。所以例如下面的操作：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++)</div><div class="line">&#123;...&#125;</div></pre></td></tr></table></figure>
-<p>建议替换为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, <span class="keyword">int</span> length = list.size(); i &lt; length; i++)</div><div class="line">&#123;...&#125;</div></pre></td></tr></table></figure>
-<p>这样，在list.size()很大的时候，就减少了很多的消耗</p>
-<p>6、尽量采用懒加载的策略，即在需要的时候才创建</p>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String str = <span class="string">"aaa"</span>;<span class="keyword">if</span> (i == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">   list.add(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>建议替换为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (i == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">	String str = <span class="string">"aaa"</span>;</div><div class="line">	list.add(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>7、慎用异常</p>
-<p>异常对性能不利。抛出异常首先要创建一个新的对象，Throwable接口的构造函数调用名为 fillInStackTrace() 的本地同步方法，fillInStackTrace() 方法检查堆栈，收集调用跟踪信息。只要有异常被抛出，Java虚拟机就必须调整调用堆栈，因为在处理过程中创建了一个新的对象。异常只能用于错误处理，不应该用来控制程序流程。</p>
-<p>8、不要在循环中使用 try…catch…，应该把其放在最外层</p>
-<p>除非不得已。如果毫无理由地这么写了，只要你的领导资深一点、有强迫症一点，八成就要骂你为什么写出这种垃圾代码来了。</p>
-<p>9、如果能估计到待添加的内容长度，为底层以数组方式实现的集合、工具类指定初始长度</p>
-<p>比如 ArrayList、LinkedLlist、StringBuilder、StringBuffer、HashMap、HashSet 等等，以 StringBuilder 为例：</p>
-<p>（1）StringBuilder() // 默认分配16个字符的空间</p>
-<p>（2）StringBuilder(int size) // 默认分配size个字符的空间</p>
-<p>（3）StringBuilder(String str) // 默认分配16个字符+str.length()个字符空间</p>
-<p>可以通过类（这里指的不仅仅是上面的 StringBuilder ）的来设定它的初始化容量，这样可以明显地提升性能。比如 StringBuilder 吧，length 表示当前的 StringBuilder 能保持的字符数量。因为当 StringBuilder 达到最大容量的时候，它会将自身容量增加到当前的2倍再加2，无论何时只要 StringBuilder 达到它的最大容量，它就不得不创建一个新的字符数组然后将旧的字符数组内容拷贝到新字符数组中—-这是十分耗费性能的一个操作。试想，如果能预估到字符数组中大概要存放5000个字符而不指定长度，最接近5000的2次幂是4096，每次扩容加的2不管，那么：</p>
-<p>（1）在4096 的基础上，再申请8194个大小的字符数组，加起来相当于一次申请了12290个大小的字符数组，如果一开始能指定5000个大小的字符数组，就节省了一倍以上的空间；</p>
-<p>（2）把原来的4096个字符拷贝到新的的字符数组中去。</p>
-<p>这样，既浪费内存空间又降低代码运行效率。所以，给底层以数组实现的集合、工具类设置一个合理的初始化容量是错不了的，这会带来立竿见影的效果。但是，注意，像HashMap这种是以数组+链表实现的集合，别把初始大小和你估计的大小设置得一样，因为一个table上只连接一个对象的可能性几乎为0。初始大小建议设置为2的N次幂，如果能估计到有2000个元素，设置成 new HashMap(128)、new HashMap(256) 都可以。</p>
-<p>10、当复制大量数据时，使用 System.arraycopy() 命令</p>
-<p>11、乘法和除法使用移位操作</p>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (val = <span class="number">0</span>; val &lt; <span class="number">100000</span>; val += <span class="number">5</span>)</div><div class="line">&#123;</div><div class="line">	a = val * <span class="number">8</span>;</div><div class="line">	b = val / <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>用移位操作可以极大地提高性能，因为在计算机底层，对位的操作是最方便、最快的，因此建议修改为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (val = <span class="number">0</span>; val &lt; <span class="number">100000</span>; val += <span class="number">5</span>)</div><div class="line">&#123;</div><div class="line">	a = val &lt;&lt; <span class="number">3</span>;</div><div class="line">	b = val &gt;&gt; <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>移位操作虽然快，但是可能会使代码不太好理解，因此最好加上相应的注释。</p>
-<p>12、循环内不要不断创建对象引用</p>
-<p>例如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= count; i++)</div><div class="line">&#123;</div><div class="line">  Object obj = <span class="keyword">new</span> Object();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这种做法会导致内存中有count份Object对象引用存在，count很大的话，就耗费内存了，建议为改为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Object obj = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= count; i++) </div><div class="line">&#123; </div><div class="line">	obj = <span class="keyword">new</span> Object(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样的话，内存中只有一份 Object 对象引用，每次 new Object() 的时候，Object 对象引用指向不同的Object罢了，但是内存中只有一份，这样就大大节省了内存空间了。</p>
-<p>13、基于效率和类型检查的考虑，应该尽可能使用array，无法确定数组大小时才使用 ArrayList</p>
-<p>14、尽量使用 HashMap、ArrayList、StringBuilder，除非线程安全需要，否则不推荐使用 Hashtable、Vector、StringBuffer，后三者由于使用同步机制而导致了性能开销</p>
-<p>15、不要将数组声明为 public static final</p>
-<p>因为这毫无意义，这样只是定义了引用为 static final，数组的内容还是可以随意改变的，将数组声明为 public 更是一个安全漏洞，这意味着这个数组可以被外部类所改变。</p>
-<p>16、尽量在合适的场合使用单例</p>
-<p>使用单例可以减轻加载的负担、缩短加载的时间、提高加载的效率，但并不是所有地方都适用于单例，简单来说，单例主要适用于以下三个方面：</p>
-<p>（1）控制资源的使用，通过线程同步来控制资源的并发访问</p>
-<p>（2）控制实例的产生，以达到节约资源的目的</p>
-<p>（3）控制数据的共享，在不建立直接关联的条件下，让多个不相关的进程或线程之间实现通信</p>
-<p>17、尽量避免随意使用静态变量</p>
-<p>要知道，当某个对象被定义为static的变量所引用，那么gc通常是不会回收这个对象所占有的堆内存的，如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span></div><div class="line">&#123; </div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> B b = <span class="keyword">new</span> B();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>此时静态变量b的生命周期与A类相同，如果A类不被卸载，那么引用B指向的B对象会常驻内存，直到程序终止</p>
-<p>18、及时清除不再需要的会话</p>
-<p>为了清除不再活动的会话，许多应用服务器都有默认的会话超时时间，一般为30分钟。当应用服务器需要保存更多的会话时，如果内存不足，那么操作系统会把部分数据转移到磁盘，应用服务器也可能根据MRU（最近最频繁使用）算法把部分不活跃的会话转储到磁盘，甚至可能抛出内存不足的异常。如果会话要被转储到磁盘，那么必须要先被序列化，在大规模集群中，对对象进行序列化的代价是很昂贵的。因此，当会话不再需要时，应当及时调用 HttpSession 的 invalidate() 方法清除会话。</p>
-<p>19、实现 RandomAccess 接口的集合比如 ArrayList，应当使用最普通的 for 循环而不是 foreach 循环来遍历</p>
-<p>这是JDK推荐给用户的。JDK API对于 RandomAccess 接口的解释是：实现 RandomAccess 接口用来表明其支持快速随机访问，此接口的主要目的是允许一般的算法更改其行为，从而将其应用到随机或连续访问列表时能提供良好的性能。实际经验表明，实现 RandomAccess 接口的类实例，假如是随机访问的，使用普通 for 循环效率将高于使用 foreach 循环；反过来，如果是顺序访问的，则使用 Iterator 会效率更高。可以使用类似如下的代码作判断：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (list <span class="keyword">instanceof</span> RandomAccess)</div><div class="line">&#123; </div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++)&#123;&#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	Iterator&lt;?&gt; iterator = list.iterable(); </div><div class="line">	<span class="keyword">while</span> (iterator.hasNext())</div><div class="line">	&#123;</div><div class="line">		iterator.next();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>foreach 循环的底层实现原理就是迭代器 Iterator，参见Java语法糖1：可变长度参数以及 foreach 循环原理。所以后半句”反过来，如果是顺序访问的，则使用 Iterator 会效率更高”的意思就是顺序访问的那些类实例，使用 foreach 循环去遍历。</p>
-<p>20、使用同步代码块替代同步方法</p>
-<p>这点在多线程模块中的 synchronized 锁方法块一文中已经讲得很清楚了，除非能确定一整个方法都是需要进行同步的，否则尽量使用同步代码块，避免对那些不需要进行同步的代码也进行了同步，影响了代码执行效率。</p>
-<p>21、将常量声明为 static final，并以大写命名</p>
-<p>这样在编译期间就可以把这些内容放入常量池中，避免运行期间计算生成常量的值。另外，将常量的名字以大写命名也可以方便区分出常量与变量</p>
-<p>22、不要创建一些不使用的对象，不要导入一些不使用的类</p>
-<p>这毫无意义，如果代码中出现”The value of the local variable i is not used”、”The import java.util is never used”，那么请删除这些无用的内容</p>
-<p>23、程序运行过程中避免使用反射</p>
-<p>关于，请参见反射。反射是Java提供给用户一个很强大的功能，功能强大往往意味着效率不高。不建议在程序运行过程中使用尤其是频繁使用反射机制，特别是Method的invoke方法，如果确实有必要，一种建议性的做法是将那些需要通过反射加载的类在项目启动的时候通过反射实例化出一个对象并放入内存—-用户只关心和对端交互的时候获取最快的响应速度，并不关心对端的项目启动花多久时间。</p>
-<p>24、使用数据库连接池和线程池</p>
-<p>这两个池都是用于重用对象的，前者可以避免频繁地打开和关闭连接，后者可以避免频繁地创建和销毁线程</p>
-<p>25、使用带缓冲的输入输出流进行IO操作</p>
-<p>带缓冲的输入输出流，即BufferedReader、BufferedWriter、BufferedInputStream、BufferedOutputStream，这可以极大地提升IO效率</p>
-<p>26、顺序插入和随机访问比较多的场景使用ArrayList，元素删除和中间插入比较多的场景使用LinkedList这个，理解ArrayList和LinkedList的原理就知道了</p>
-<p>27、不要让public方法中有太多的形参</p>
-<p>public方法即对外提供的方法，如果给这些方法太多形参的话主要有两点坏处：</p>
-<p>1、违反了面向对象的编程思想，Java讲求一切都是对象，太多的形参，和面向对象的编程思想并不契合</p>
-<p>2、参数太多势必导致方法调用的出错概率增加</p>
-<p>至于这个”太多”指的是多少个，3、4个吧。比如我们用JDBC写一个insertStudentInfo方法，有10个学生信息字段要插如Student表中，可以把这10个参数封装在一个实体类中，作为insert方法的形参。</p>
-<p>28、字符串变量和字符串常量equals的时候将字符串常量写在前面</p>
-<p>这是一个比较常见的小技巧了，如果有以下代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String str = <span class="string">"123"</span>;</div><div class="line"><span class="keyword">if</span> (str.equals(<span class="string">"123"</span>)) &#123;...&#125;</div></pre></td></tr></table></figure>
-<p>建议修改为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String str = <span class="string">"123"</span>;</div><div class="line"><span class="keyword">if</span> (<span class="string">"123"</span>.equals(str))</div><div class="line">&#123;</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这么做主要是可以避免空指针异常</p>
-<p>29、请知道，在java中if (i == 1)和if (1 == i)是没有区别的，但从阅读习惯上讲，建议使用前者</p>
-<p>平时有人问，”if (i == 1)”和”if (1== i)”有没有区别，这就要从C/C++讲起。</p>
-<p>在C/C++中，”if (i == 1)”判断条件成立，是以0与非0为基准的，0表示false，非0表示true，如果有这么一段代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">2</span>;<span class="keyword">if</span> (i == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">...</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>C/C++判断”i==1″不成立，所以以0表示，即false。但是如果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">2</span>;</div><div class="line"><span class="keyword">if</span> (i = <span class="number">1</span>)</div><div class="line">&#123; </div><div class="line">	... </div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">... </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>万一程序员一个不小心，把”if (i == 1)”写成”if (i = 1)”，这样就有问题了。在if之内将i赋值为1，if判断里面的内容非0，返回的就是true了，但是明明i为2，比较的值是1，应该返回的false。这种情况在C/C++的开发中是很可能发生的并且会导致一些难以理解的错误产生，所以，为了避免开发者在if语句中不正确的赋值操作，建议将if语句写为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">2</span>;</div><div class="line"><span class="keyword">if</span> (<span class="number">1</span> == i) &#123;</div><div class="line">... </div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">... </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样，即使开发者不小心写成了”1 = i”，C/C++编译器也可以第一时间检查出来，因为我们可以对一个变量赋值i为1，但是不能对一个常量赋值1为i。</p>
-<p>但是，在Java中，C/C++这种”if (i = 1)”的语法是不可能出现的，因为一旦写了这种语法，Java就会编译报错”Type mismatch: cannot convert from int to boolean”。但是，尽管Java的”if (i == 1)”和”if (1 == i)”在语义上没有任何区别，但是从阅读习惯上讲，建议使用前者会更好些。</p>
-<p>30、不要对数组使用toString()方法</p>
-<p>看一下对数组使用toString()打印出来的是什么：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">&#123; </div><div class="line">	<span class="keyword">int</span>[] is = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</div><div class="line">	System.out.println(is.toString());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[I@18a992f</div></pre></td></tr></table></figure>
-<p>本意是想打印出数组内容，却有可能因为数组引用is为空而导致空指针异常。不过虽然对数组toString()没有意义，但是对集合toString()是可以打印出集合里面的内容的，因为集合的父类AbstractCollections重写了Object的toString()方法。</p>
-<p>31、不要对超出范围的基本数据类型做向下强制转型</p>
-<p>这绝不会得到想要的结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">&#123; </div><div class="line">	<span class="keyword">long</span> l = <span class="number">12345678901234L</span>;<span class="keyword">int</span> i = (<span class="keyword">int</span>)l;</div><div class="line">	System.out.println(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们可能期望得到其中的某几位，但是结果却是：</p>
-<p><code>1942892530</code></p>
-<p>解释一下。Java中long是8个字节64位的，所以12345678901234在计算机中的表示应该是：</p>
-<p>0000 0000 0000 0000 0000 1011 0011 1010 0111 0011 1100 1110 0010 1111 1111 0010</p>
-<p>一个int型数据是4个字节32位的，从低位取出上面这串二进制数据的前32位是：</p>
-<p>0111 0011 1100 1110 0010 1111 1111 0010</p>
-<p>这串二进制表示为十进制1942892530，所以就是我们上面的控制台上输出的内容。从这个例子上还能顺便得到两个结论：</p>
-<p>1、整型默认的数据类型是int，long l = 12345678901234L，这个数字已经超出了int的范围了，所以最后有一个L，表示这是一个long型数。顺便，浮点型的默认类型是double，所以定义float的时候要写成””float f = 3.5f”</p>
-<p>2、接下来再写一句”int ii = l + i;”会报错，因为long + int是一个long，不能赋值给int</p>
-<p>32、公用的集合类中不使用的数据一定要及时remove掉</p>
-<p>如果一个集合类是公用的（也就是说不是方法里面的属性），那么这个集合里面的元素是不会自动释放的，因为始终有引用指向它们。所以，如果公用集合里面的某些数据不使用而不去remove掉它们，那么将会造成这个公用集合不断增大，使得系统有内存泄露的隐患。</p>
-<p>33、把一个基本数据类型转为字符串，基本数据类型.toString()是最快的方式、String.valueOf(数据)次之、数据+””最慢</p>
-<p>把一个基本数据类型转为一般有三种方式，我有一个Integer型数据i，可以使用i.toString()、String.valueOf(i)、i+””三种方式，三种方式的效率如何，看一个测试：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">&#123; </div><div class="line">	<span class="keyword">int</span> loopTime = <span class="number">50000</span>;</div><div class="line">	Integer i = <span class="number">0</span>; </div><div class="line">	<span class="keyword">long</span> startTime = System.currentTimeMillis(); </div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; loopTime; j++)</div><div class="line">	&#123;</div><div class="line">		String str = String.valueOf(i);</div><div class="line">	&#125;</div><div class="line">System.out.println(<span class="string">"String.valueOf()："</span> + (System.currentTimeMillis() - startTime) + <span class="string">"ms"</span>);</div><div class="line">	startTime = System.currentTimeMillis(); </div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; loopTime; j++)</div><div class="line">	&#123;</div><div class="line">		String str = i.toString();</div><div class="line">	&#125;</div><div class="line">System.out.println(<span class="string">"Integer.toString()："</span> + (System.currentTimeMillis() - startTime) + <span class="string">"ms"</span>);</div><div class="line">startTime = System.currentTimeMillis(); </div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; loopTime; j++)</div><div class="line">&#123;</div><div class="line">	String str = i + <span class="string">""</span>;</div><div class="line">&#125;</div><div class="line">System.out.println(<span class="string">"i + \"\"："</span> + (System.currentTimeMillis() - startTime) + <span class="string">"ms"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>运行结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.valueOf()：11ms Integer.toString()：5ms i + &quot;&quot;：25ms</div></pre></td></tr></table></figure>
-<p>所以以后遇到把一个基本数据类型转为String的时候，优先考虑使用toString()方法。至于为什么，很简单：</p>
-<p>1、String.valueOf()方法底层调用了Integer.toString()方法，但是会在调用前做空判断</p>
-<p>2、Integer.toString()方法就不说了，直接调用了</p>
-<p>3、i + “”底层使用了StringBuilder实现，先用append方法拼接，再用toString()方法获取字符串</p>
-<p>三者对比下来，明显是2最快、1次之、3最慢</p>
-<p>34、使用最有效率的方式去遍历Map</p>
-<p>遍历Map的方式有很多，通常场景下我们需要的是遍历Map中的Key和Value，那么推荐使用的、效率最高的方式是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">&#123;</div><div class="line">HashMap&lt;String, String&gt; hm = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</div><div class="line">hm.put(<span class="string">"111"</span>, <span class="string">"222"</span>);</div><div class="line">Set&lt;Map.Entry&lt;String, String&gt;&gt; entrySet = hm.entrySet();</div><div class="line">Iterator&lt;Map.Entry&lt;String, String&gt;&gt; iter = entrySet.iterator(); </div><div class="line"><span class="keyword">while</span> (iter.hasNext())</div><div class="line">&#123;</div><div class="line">Map.Entry&lt;String, String&gt; entry = iter.next();</div><div class="line">System.out.println(entry.getKey() + <span class="string">"\t"</span> + entry.getValue());</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果你只是想遍历一下这个Map的key值，那用”Set keySet = hm.keySet();”会比较合适一些</p>
-<p>35、对资源的close()建议分开操作</p>
-<p>意思是，比如我有这么一段代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">XXX.close();</div><div class="line">YYY.close();</div><div class="line">&#125;<span class="keyword">catch</span> (Exception e)</div><div class="line">&#123;...&#125;</div></pre></td></tr></table></figure>
-<p>建议修改为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123; </div><div class="line">  XXX.close(); </div><div class="line">&#125;<span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">  ... </div><div class="line">&#125;<span class="keyword">try</span>&#123; </div><div class="line">  YYY.close(); </div><div class="line">&#125;<span class="keyword">catch</span> (Exception e) &#123; </div><div class="line">  ... </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>虽然有些麻烦，却能避免资源泄露。我想，如果没有修改过的代码，万一XXX.close()抛异常了，那么就进入了cath块中了，YYY.close()不会执行，YYY这块资源就不会回收了，一直占用着，这样的代码一多，是可能引起资源句柄泄露的。而改为上面的写法之后，就保证了无论如何XXX和YYY都会被close掉。</p>
-<p>以上就是 Java 开发编程注意细节的全部内容了，感谢大家的阅读！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;昨天写了篇文章 &lt;a href=&quot;http://www.54tianzhisheng.cn/2017/04/29/MySQL-select-good/&quot;&gt;《MySQL 处理海量数据时的一些优化查询速度方法》&lt;/a&gt; ，其实开发中不止数据库要优化，还有我们本身的开发代码也需要优化，这样我们开发的产品才能够得到极致的体验。也许有些人认为这些细小的地方没有啥好修改的，改与不改对运行效率没啥大的影响？首先在我们本地一个人测试下效率是不怎么明显，但是如果到发布上线后，你的用户有几百万，甚至上千万，这些用户同时访问你的网站，那么你的网站是否经得住考验呢，效率那高不高呢，如果效率不高，那么需要多出很多买服务器的经费呢，所以想想还是很有必要注意这些小的细节。今天就讲讲一些 Java 性能调优需要格外注意的一些细节。&lt;/p&gt;
-&lt;p&gt;代码优化的目标：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;减少代码的体积&lt;/li&gt;
-&lt;li&gt;提高代码的运行效率&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL 处理海量数据时的一些优化查询速度方法</title>
-    <link href="http://yoursite.com/2017/04/29/MySQL-select-good/"/>
-    <id>http://yoursite.com/2017/04/29/MySQL-select-good/</id>
-    <published>2017-04-29T10:05:54.287Z</published>
-    <updated>2017-06-13T10:43:18.759Z</updated>
-    
-    <content type="html"><![CDATA[<p>在参与实际项目中，当 MySQL 表的数据量达到百万级时，普通的 SQL 查询效率呈直线下降，而且如果 where 中的查询条件较多时，其查询速度无法容忍。想想可知，假如我们查询淘宝的一个订单详情，如果查询时间高达几十秒，这么高的查询延时，任何用户都会抓狂。因此如何提高 SQL 语句查询效率，显得十分重要。<br><a id="more"></a></p>
-<h3 id="查询速度慢的原因"><a href="#查询速度慢的原因" class="headerlink" title="查询速度慢的原因"></a>查询速度慢的原因</h3><p>1、没有索引或者没有用到索引（这是查询慢最常见的问题，是程序设计的缺陷）</p>
-<p>2、I/O 吞吐量小，形成了瓶颈效应。</p>
-<p>3、没有创建计算列导致查询不优化。</p>
-<p>4、内存不足</p>
-<p>5、网络速度慢</p>
-<p>6、查询出的数据量过大（可采用多次查询，其他的方法降低数据量）</p>
-<p>7、锁或者死锁（这是查询慢最常见的问题，是程序设计的缺陷）</p>
-<p>8、sp_lock,sp_who,活动的用户查看,原因是读写竞争资源。</p>
-<p>9、返回了不必要的行和列  </p>
-<p>10、查询语句不好，没有优化  </p>
-<hr>
-<h3 id="30-种-SQL-查询语句的优化方法："><a href="#30-种-SQL-查询语句的优化方法：" class="headerlink" title="30 种 SQL 查询语句的优化方法："></a>30 种 SQL 查询语句的优化方法：</h3><p>1、应尽量避免在 where 子句中使用 != 或者 &lt;&gt; 操作符，否则将引擎放弃使用索引而进行全表扫描。</p>
-<p>2、应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">is</span> <span class="literal">null</span>;</div></pre></td></tr></table></figure>
-<p>可以在 num 上设置默认值 0 ，确保表中 num 列没有 null 值，然后这样查询：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> = <span class="number">0</span>;</div></pre></td></tr></table></figure>
-<p>3、对查询进行优化，应尽量避免全表扫描，首先应考虑在 where 及 order by 涉及的列上建立索引。</p>
-<p>4、尽量避免在 where 子句中使用 or 来连接条件，否则将导致引擎放弃使用索引而进行全表扫描，如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> = <span class="number">10</span> <span class="keyword">or</span> <span class="keyword">num</span> = <span class="number">20</span>;</div></pre></td></tr></table></figure>
-<p>可以这样查询：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> = <span class="number">10</span></div><div class="line"><span class="keyword">union</span> all</div><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> = <span class="number">20</span>;</div></pre></td></tr></table></figure>
-<p>5、下面的查询也将导致全表扫描：（不能前置百分号）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'%abc%'</span>;</div></pre></td></tr></table></figure>
-<p>若要提高效率，可以考虑全文检索。</p>
-<p>6、in 和 not in 也要慎用，否则会导致全表扫描，如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">in</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
-<p>对于连续的数值，能用 between 就不要用 in 了：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">between</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">3</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> xx,phone <span class="keyword">FROM</span> send  a <span class="keyword">JOIN</span> (</div><div class="line"> <span class="keyword">select</span> <span class="string">'13891030091'</span> phone  <span class="keyword">union</span> <span class="keyword">select</span> <span class="string">'13992085916'</span> …………  <span class="keyword">UNION</span>  <span class="keyword">SELECT</span> <span class="string">'13619100234'</span> ) b</div><div class="line">  <span class="keyword">on</span>  a.Phone=b.phone</div><div class="line"><span class="comment">--替代下面  很多数据隔开的时候</span></div><div class="line"><span class="keyword">in</span>(<span class="string">'13891030091'</span>,<span class="string">'13992085916'</span>,<span class="string">'13619100234'</span>…………)</div></pre></td></tr></table></figure>
-<p>7、如果在 where 子句中使用参数，也会导致全表扫描。因为 SQL 只有在运行时才会解析局部变量，但优化程序不能将访问计划的选择到运行时；它必须在编译时进行选择。然而，如果在编译时简历访问计划，变量的值还是未知的，因而无法作为索引选择的输入项。如下面语句将进行全表扫描：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> = @<span class="keyword">num</span>;</div></pre></td></tr></table></figure>
-<p>可以改为强制查询使用索引：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">with</span>(<span class="keyword">index</span>(索引名)) <span class="keyword">where</span> <span class="keyword">num</span> = @<span class="keyword">num</span>;</div></pre></td></tr></table></figure>
-<p>8、应尽量避免在 where 子句中对字段进行表达式操作，这将导致引擎放弃使用索引而进行全表扫描。如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span>/<span class="number">2</span> = <span class="number">100</span>;</div></pre></td></tr></table></figure>
-<p>应改为：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">num</span> = <span class="number">100</span> * <span class="number">2</span>;</div></pre></td></tr></table></figure>
-<p>9、应尽量避免在 where 子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描。如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">substring</span>(<span class="keyword">name</span>, <span class="number">1</span>, <span class="number">3</span>) = ’abc’–<span class="keyword">name</span>;  //以abc开头的id</div><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">datediff</span>(<span class="keyword">day</span>,createdate,’<span class="number">2005</span><span class="number">-11</span><span class="number">-30</span>′) = <span class="number">0</span>–’<span class="number">2005</span><span class="number">-11</span><span class="number">-30</span>′;  //生成的id</div></pre></td></tr></table></figure>
-<p>应改为:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> ‘abc%’</div><div class="line"><span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> t <span class="keyword">where</span> createdate &gt;= ’<span class="number">2005</span><span class="number">-11</span><span class="number">-30</span>′ <span class="keyword">and</span> createdate &lt; ’<span class="number">2005</span><span class="number">-12</span><span class="number">-1</span>′;</div></pre></td></tr></table></figure>
-<p>10、不要在 where 子句中的 “=” 左边进行函数，算术运算或者其他表达式运算，否则系统将可能无法正确使用索引。</p>
-<p>11、在使用索引字段作为条件时，如果该索引是复合索引，那么必须使用到该索引的第一个字段作为条件时才能保证系统使用该索引，否则该索引将不会被使用，并且应尽可能的让字段顺序与索引顺序相一致。</p>
-<p>12、不要些一些没有意义的查询，如需要生成一个空表结构：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> col1,col2 <span class="keyword">into</span> #t <span class="keyword">from</span> t <span class="keyword">where</span> <span class="number">1</span>=<span class="number">0</span>;</div></pre></td></tr></table></figure>
-<p>这类代码不会返回任何结果集，但是会消耗系统资源的，应改成这样：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> #t(…)</div></pre></td></tr></table></figure>
-<p>13、很多时候用 exists 代替 in 是一个好的选择：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">num</span> <span class="keyword">from</span> a <span class="keyword">where</span> <span class="keyword">num</span> <span class="keyword">in</span>(<span class="keyword">select</span> <span class="keyword">num</span> <span class="keyword">from</span> b);</div></pre></td></tr></table></figure>
-<p>用下面的语句替换：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">num</span> <span class="keyword">from</span> a <span class="keyword">where</span> <span class="keyword">exists</span>(<span class="keyword">select</span> <span class="number">1</span> <span class="keyword">from</span> b <span class="keyword">where</span> <span class="keyword">num</span>=a.num);</div></pre></td></tr></table></figure>
-<p>14、并不是所有索引对查询都有效，SQL是根据表中数据来进行查询优化的，当索引列有大量数据重复时，SQL查询可能不会去利用索引，如一表中有字段 sex，male、female几乎各一半，那么即使在sex上建了索引也对查询效率起不了作用。</p>
-<p>15、索引并不是越多越好，索引固然可以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率，因为 insert 或 update 时有可能会重建索引，所以怎样建索引需要慎重考虑，视具体情况而定。一个表的索引数最好不要超过6个，若太多则应考虑一些不常使用到的列上建的索引是否有必要。</p>
-<p>16、应尽可能的避免更新 clustered 索引数据列，因为 clustered 索引数据列的顺序就是表记录的物理存储顺序，一旦该列值改变将导致整个表记录的顺序的调整，会耗费相当大的资源。若应用系统需要频繁更新 clustered 索引数据列，那么需要考虑是否应将该索引建为 clustered 索引。</p>
-<p>17、尽量使用数字型字段，若只含数值信息的字段尽量不要设计为字符型，这会降低查询和连接的性能，并会增加存储开销。这是因为引擎在处理查询和连接时会 逐个比较字符串中每一个字符，而对于数字型而言只需要比较一次就够了。</p>
-<p>18、尽可能的使用 varchar/nvarchar 代替 char/nchar ，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些。</p>
-<p>19、任何地方都不要使用 <code>select * from t</code> ，用具体的字段列表代替 <code>*</code>，不要返回用不到的任何字段。</p>
-<p>20、尽量使用表变量来代替临时表。如果表变量包含大量数据，请注意索引非常有限（只有主键索引）。</p>
-<p>21、避免频繁创建和删除临时表，以减少系统表资源的消耗。</p>
-<p>22、临时表并不是不可使用，适当地使用它们可以使某些例程更有效，例如，当需要重复引用大型表或常用表中的某个数据集时。但是，对于一次性事件，最好使用导出表。</p>
-<p>23、在新建临时表时，如果一次性插入数据量很大，那么可以使用 select into 代替 create table，避免造成大量 log ，以提高速度；如果数据量不大，为了缓和系统表的资源，应先 create table，然后 insert。</p>
-<p>24、如果使用到了临时表，在存储过程的最后务必将所有的临时表显式删除，先 truncate table ，然后 drop table ，这样可以避免系统表的较长时间锁定。</p>
-<p>25、尽量避免使用游标，因为游标的效率较差，如果游标操作的数据超过1万行，那么就应该考虑改写。</p>
-<p>26、使用基于游标的方法或临时表方法之前，应先寻找基于集的解决方案来解决问题，基于集的方法通常更有效。</p>
-<p>27、与临时表一样，游标并不是不可使用。对小型数据集使用 FAST_FORWARD 游标通常要优于其他逐行处理方法，尤其是在必须引用几个表才能获得所需的数据时。在结果集中包括“合计”的例程通常要比使用游标执行的速度快。如果开发时 间允许，基于游标的方法和基于集的方法都可以尝试一下，看哪一种方法的效果更好。</p>
-<p>28、在所有的存储过程和触发器的开始处设置 SET NOCOUNT ON ，在结束时设置 SET NOCOUNT OFF 。无需在执行存储过程和触发器的每个语句后向客户端发送 DONE_IN_PROC 消息。</p>
-<p>29、尽量避免向客户端返回大数据量，若数据量过大，应该考虑相应需求是否合理。</p>
-<p>30、尽量避免大事务操作，提高系统并发能力。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在参与实际项目中，当 MySQL 表的数据量达到百万级时，普通的 SQL 查询效率呈直线下降，而且如果 where 中的查询条件较多时，其查询速度无法容忍。想想可知，假如我们查询淘宝的一个订单详情，如果查询时间高达几十秒，这么高的查询延时，任何用户都会抓狂。因此如何提高 SQL 语句查询效率，显得十分重要。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录下自己第一次坐飞机的感受</title>
-    <link href="http://yoursite.com/2017/04/23/feiji/"/>
-    <id>http://yoursite.com/2017/04/23/feiji/</id>
-    <published>2017-04-23T02:20:42.665Z</published>
-    <updated>2017-06-13T10:41:34.449Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>因为学校的原因，需要在大三的时候出去实训几个月，然后选择的是在昆山，公司规定要在 2017 年 4 月 19 号之前赶到，所以我提前订的机票是 17 号，之所以会订机票，其实很大一部分原因是由于自己之前没有坐过飞机，所以想体验一下坐飞机的感脚（嘿嘿），再加上这是机票的淡季，所以坐飞机的价钱比做高铁还便宜。整个行程：学校 ——&gt;  南昌机场 ——&gt;  上海虹桥机场 ——&gt;  公司</p>
-<h3 id="学校出发"><a href="#学校出发" class="headerlink" title="学校出发"></a>学校出发</h3><p>10 点左右去食堂吃了个早餐，然后打包好自己的行李，由于第一次坐飞机，所以打算提前时间去机场，然后在机场熟悉熟悉环境，不然的话错过飞机，那就 gg 了。大概 11：30 了，就拖着行李出门，在学校门口叫了辆 滴滴车 去机场（因为公交车要坐好久并且去机场的路好烂），叫的滴滴车他走的是高速，很快。<br><a id="more"></a></p>
-<h3 id="南昌机场"><a href="#南昌机场" class="headerlink" title="南昌机场"></a>南昌机场</h3><p>不到半小时就到了机场，首先干的事就是取票。</p>
-<p><img src="http://ohfk1r827.bkt.clouddn.com/sp20170423_101429.jpg" alt=""></p>
-<p>然后将行李箱免费托运（小于20公斤可免费托运，超过的话那就准备好 Money 吧），一个同行的同学就超重了。干完了这些事就没啥事了，然后就坐在凳子上看起了最近很火的电视剧《人民的名义》，的确很好看的，没看过的话，可以去看看。</p>
-<p>大概 13：40 时，准备进站了，这里要说的就比较有趣了。我就具体的说下：</p>
-<ul>
-<li><p>一开始排队（人不多），轮到我，把机票和身份证给她，然后对着摄像头拍了个照就进去检查随身携带的物品了。</p>
-</li>
-<li><p>这里之前我就听说了：说是飞机上不能携带液体，不知道我书包带的洗发液能不能过关？同学和我之前还在一起开玩笑说：1、如果不能带，我就当场一口闷了它。（这也行，下图随意找了个表情包）<img src="data:image/jpeg;base64,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" alt=""></p>
-<p>2、我免费请大家洗个头</p>
-</li>
-<li><p>电脑和雨伞而外检查</p>
-</li>
-<li><p>书包和随身携带物品都拿出来过安检</p>
-</li>
-<li><p>人扫描（检查的挺细致的，比火车严多了）</p>
-</li>
-<li><p>结果检查人员告知我：把 洗发液 和 两个螺丝刀 拿出来。（我当场就震惊了，我那么小的螺丝刀都被检查到了，这几乎把我的书包给透视了一个遍）</p>
-<p><img src="https://encrypted-tbn0.gstatic.cn/images?q=tbn:ANd9GcSErzXLInCfeTtckRLSeur3xeBmOuEVbFY01v9te0TI7xg72BkGLQ" alt=""></p>
-</li>
-<li><p>然后呢，自己只好将违禁物品都拿出来，再次检查就可以通过了。</p>
-</li>
-<li><p>走进去的时候拍的一张照片, （电梯好长，不过后来在上海机场下车才发现那个也还好了）</p>
-<p><img src="http://ohfk1r827.bkt.clouddn.com/sp20170423_101541.jpg" alt=""></p>
-</li>
-<li><p>进去后，又有一个小的进站室，又在那里等待了会。</p>
-</li>
-<li><p>又开始检票，检完票后坐公交车去飞机下面（因为飞机场太大，我坐的那架飞机不是靠近站台的）</p>
-</li>
-<li><p>上飞机后从窗口拍的一张照片</p>
-<p><img src="http://ohfk1r827.bkt.clouddn.com/sp20170423_101559.jpg" alt=""></p>
-</li>
-</ul>
-<h3 id="飞机上"><a href="#飞机上" class="headerlink" title="飞机上"></a>飞机上</h3><p>看见飞机的空姐和空少了。。（空姐很漂亮，嘻嘻，没拍照片）</p>
-<p>飞机起飞的时候，机舱里有语音播放叫我们系上安全带，并且关闭手机，所以后面就没照片了。</p>
-<p>起飞感觉走了好远，然后突然一加速，飞机就慢慢的向上飞起，整个人重心都是往后倒的。</p>
-<p>不一会，飞机就飞的好高了，从窗口望下去，下面的感觉好美，一路上的风景感觉都挺漂亮的，有时还可以看到白云。</p>
-<p>大概一个小时后，空姐推着个车，提供给我们点零食（面包、饼干、榨菜）和饮料（橙汁、苹果醋、矿泉水、咖啡，可自选一样，可再加一杯），服务还是挺贴心的，我在这里给中国东方航空点个赞。</p>
-<p>飞机中途有时会颠簸，机舱里语音说是遇到空气气流的影响。（大部分时间还是很好的）</p>
-<p>说说飞机下降的时候吧，同样，感觉声音很大，耳朵有点受不了。不知道空姐、空少们怎么长期受得了这这声音，长期下去，那估计耳朵都要出毛病的吧？</p>
-<h3 id="上海虹桥机场"><a href="#上海虹桥机场" class="headerlink" title="上海虹桥机场"></a>上海虹桥机场</h3><p>机场给人的感觉很大，走了那个电梯都走了很远。</p>
-<p><img src="http://ohfk1r827.bkt.clouddn.com/sp20170423_101524.jpg" alt=""></p>
-<p>就只有一张照片。</p>
-<p>然后再去取我的行李箱，有个专门来自南昌的取行李处，行李箱一个的放在传送带上，自己拿自己的行李出去。这里有个疑问，如果行李被别人提走的话，那该咋办，我看出口都没设置检查行李是否和本人的匹配？</p>
-<h3 id="公司"><a href="#公司" class="headerlink" title="公司"></a>公司</h3><p>公司提前有大巴来接我们，坐上大巴，然后在车上躺了下，就睡着了，直到到达公司。</p>
-<p>住宿地址和公司有点远，所以买了辆 死飞自行车，方便出行，自己周末也可以出去玩玩。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>第一次坐飞机，感觉还是挺好的。流程也不复杂，所以不麻烦。</p>
-<p>不过自己要注意一些东西：</p>
-<ul>
-<li>不要携带飞机上违禁物品（液体、超过多大的充电宝、刀枪等）</li>
-<li>一定要提前动身，以防发生突发事件</li>
-<li>注意保管好自己的身份证</li>
-</ul>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>这是我在我博客上写的第一篇随笔文章，不知道咋写，就随便写。</p>
-<p>因为星期六（昨天）出去玩了，所以今天早上起来写下来这篇，有些事还是得赶紧做掉去，不然一直拖，拖着拖着就没有想做的欲望了。</p>
-<p>公司周围环境挺好的，水乡之地，有个阳澄湖，盛产大闸蟹，周围的大闸蟹庄，那叫一个字：<strong>多</strong>。有空的时候我尽量多去逛逛，拍点照片回来。</p>
-<p>今后也会多写点随笔，记录生活中一些有趣且值得纪念的点滴。</p>
-<p>感谢阅读！！！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h3&gt;&lt;p&gt;因为学校的原因，需要在大三的时候出去实训几个月，然后选择的是在昆山，公司规定要在 2017 年 4 月 19 号之前赶到，所以我提前订的机票是 17 号，之所以会订机票，其实很大一部分原因是由于自己之前没有坐过飞机，所以想体验一下坐飞机的感脚（嘿嘿），再加上这是机票的淡季，所以坐飞机的价钱比做高铁还便宜。整个行程：学校 ——&amp;gt;  南昌机场 ——&amp;gt;  上海虹桥机场 ——&amp;gt;  公司&lt;/p&gt;
-&lt;h3 id=&quot;学校出发&quot;&gt;&lt;a href=&quot;#学校出发&quot; class=&quot;headerlink&quot; title=&quot;学校出发&quot;&gt;&lt;/a&gt;学校出发&lt;/h3&gt;&lt;p&gt;10 点左右去食堂吃了个早餐，然后打包好自己的行李，由于第一次坐飞机，所以打算提前时间去机场，然后在机场熟悉熟悉环境，不然的话错过飞机，那就 gg 了。大概 11：30 了，就拖着行李出门，在学校门口叫了辆 滴滴车 去机场（因为公交车要坐好久并且去机场的路好烂），叫的滴滴车他走的是高速，很快。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
