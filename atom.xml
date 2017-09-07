@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-28T13:59:39.113Z</updated>
+  <updated>2017-09-07T13:46:56.985Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,223 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Elasticsearch 默认分词器和中分分词器之间的比较及使用方法</title>
+    <link href="http://yoursite.com/2017/09/07/Elasticsearch-analyzers/"/>
+    <id>http://yoursite.com/2017/09/07/Elasticsearch-analyzers/</id>
+    <published>2017-09-07T01:50:46.000Z</published>
+    <updated>2017-09-07T13:46:56.985Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍：ElasticSearch 是一个基于 Lucene 的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于 RESTful web 接口。Elasticsearch 是用 Java 开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。</p>
+<p>Elasticsearch中，内置了很多分词器（analyzers）。下面来进行比较下系统默认分词器和常用的中文分词器之间的区别。<br><a id="more"></a></p>
+<h2 id="系统默认分词器："><a href="#系统默认分词器：" class="headerlink" title="系统默认分词器："></a>系统默认分词器：</h2><h3 id="1、standard-分词器"><a href="#1、standard-分词器" class="headerlink" title="1、standard 分词器"></a>1、standard 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-standard-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-standard-analyzer.html</a></p>
+<p>如何使用：<a href="http://www.yiibai.com/lucene/lucene_standardanalyzer.html" target="_blank" rel="external">http://www.yiibai.com/lucene/lucene_standardanalyzer.html</a></p>
+<p>英文的处理能力同于StopAnalyzer.支持中文采用的方法为单字切分。他会将词汇单元转换成小写形式，并去除停用词和标点符号。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**StandardAnalyzer分析器*/</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">standardAnalyzer</span><span class="params">(String msg)</span></span>&#123;</div><div class="line">        StandardAnalyzer analyzer = <span class="keyword">new</span> StandardAnalyzer(Version.LUCENE_36);</div><div class="line">        <span class="keyword">this</span>.getTokens(analyzer, msg);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="2、simple-分词器"><a href="#2、simple-分词器" class="headerlink" title="2、simple 分词器"></a>2、simple 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-simple-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-simple-analyzer.html</a></p>
+<p>如何使用: <a href="http://www.yiibai.com/lucene/lucene_simpleanalyzer.html" target="_blank" rel="external">http://www.yiibai.com/lucene/lucene_simpleanalyzer.html</a></p>
+<p>功能强于WhitespaceAnalyzer, 首先会通过非字母字符来分割文本信息，然后将词汇单元统一为小写形式。该分析器会去掉数字类型的字符。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**SimpleAnalyzer分析器*/</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">simpleAnalyzer</span><span class="params">(String msg)</span></span>&#123;</div><div class="line">        SimpleAnalyzer analyzer = <span class="keyword">new</span> SimpleAnalyzer(Version.LUCENE_36);</div><div class="line">        <span class="keyword">this</span>.getTokens(analyzer, msg);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="3、Whitespace-分词器"><a href="#3、Whitespace-分词器" class="headerlink" title="3、Whitespace 分词器"></a>3、Whitespace 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html</a></p>
+<p>如何使用：<a href="http://www.yiibai.com/lucene/lucene_whitespaceanalyzer.html" target="_blank" rel="external">http://www.yiibai.com/lucene/lucene_whitespaceanalyzer.html</a></p>
+<p>仅仅是去除空格，对字符没有lowcase化,不支持中文；<br>并且不对生成的词汇单元进行其他的规范化处理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**WhitespaceAnalyzer分析器*/</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">whitespaceAnalyzer</span><span class="params">(String msg)</span></span>&#123;</div><div class="line">        WhitespaceAnalyzer analyzer = <span class="keyword">new</span> WhitespaceAnalyzer(Version.LUCENE_36);</div><div class="line">        <span class="keyword">this</span>.getTokens(analyzer, msg);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="4、Stop-分词器"><a href="#4、Stop-分词器" class="headerlink" title="4、Stop 分词器"></a>4、Stop 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-stop-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-stop-analyzer.html</a></p>
+<p>如何使用：<a href="http://www.yiibai.com/lucene/lucene_stopanalyzer.html" target="_blank" rel="external">http://www.yiibai.com/lucene/lucene_stopanalyzer.html</a></p>
+<p> StopAnalyzer的功能超越了SimpleAnalyzer，在SimpleAnalyzer的基础上增加了去除英文中的常用单词（如the，a等），也可以更加自己的需要设置常用单词；不支持中文</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**StopAnalyzer分析器*/</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stopAnalyzer</span><span class="params">(String msg)</span></span>&#123;</div><div class="line">       StopAnalyzer analyzer = <span class="keyword">new</span> StopAnalyzer(Version.LUCENE_36);</div><div class="line">       <span class="keyword">this</span>.getTokens(analyzer, msg);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h3 id="5、keyword-分词器"><a href="#5、keyword-分词器" class="headerlink" title="5、keyword 分词器"></a>5、keyword 分词器</h3><p>KeywordAnalyzer把整个输入作为一个单独词汇单元，方便特殊类型的文本进行索引和检索。针对邮政编码，地址等文本信息使用关键词分词器进行索引项建立非常方便。</p>
+<h3 id="6、pattern-分词器"><a href="#6、pattern-分词器" class="headerlink" title="6、pattern 分词器"></a>6、pattern 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-pattern-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-pattern-analyzer.html</a></p>
+<p>一个pattern类型的analyzer可以通过正则表达式将文本分成”terms”(经过token Filter 后得到的东西 )。接受如下设置:</p>
+<p>一个 pattern analyzer 可以做如下的属性设置:</p>
+<table>
+<thead>
+<tr>
+<th>lowercase</th>
+<th>terms是否是小写. 默认为 true 小写.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pattern</td>
+<td>正则表达式的pattern, 默认是 \W+.</td>
+</tr>
+<tr>
+<td>flags</td>
+<td>正则表达式的flags</td>
+</tr>
+<tr>
+<td>stopwords</td>
+<td>一个用于初始化stop filter的需要stop 单词的列表.默认单词是空的列表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7、language-分词器"><a href="#7、language-分词器" class="headerlink" title="7、language 分词器"></a>7、language 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html</a></p>
+<p>一个用于解析特殊语言文本的analyzer集合。（ arabic,armenian, basque, brazilian, bulgarian, catalan, cjk, czech, danish, dutch, english, finnish, french,galician, german, greek, hindi, hungarian, indonesian, irish, italian, latvian, lithuanian, norwegian,persian, portuguese, romanian, russian, sorani, spanish, swedish, turkish, thai.）可惜没有中文。不予考虑</p>
+<h3 id="8、snowball-分词器"><a href="#8、snowball-分词器" class="headerlink" title="8、snowball 分词器"></a>8、snowball 分词器</h3><p>一个snowball类型的analyzer是由standard tokenizer和standard filter、lowercase filter、stop filter、snowball filter这四个filter构成的。</p>
+<p>snowball analyzer 在Lucene中通常是不推荐使用的。</p>
+<h3 id="9、Custom-分词器"><a href="#9、Custom-分词器" class="headerlink" title="9、Custom 分词器"></a>9、Custom 分词器</h3><p>是自定义的analyzer。允许多个零到多个tokenizer，零到多个 Char Filters. custom analyzer 的名字不能以 “_”开头.</p>
+<p>The following are settings that can be set for a custom analyzer type:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenizer</td>
+<td>通用的或者注册的tokenizer.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>通用的或者注册的token filters</td>
+</tr>
+<tr>
+<td>char_filter</td>
+<td>通用的或者注册的 character filters</td>
+</tr>
+<tr>
+<td>position_increment_gap</td>
+<td>距离查询时，最大允许查询的距离，默认是100</td>
+</tr>
+</tbody>
+</table>
+<p>自定义的模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">index :</div><div class="line">    analysis :</div><div class="line">        analyzer :</div><div class="line">            myAnalyzer2 :</div><div class="line">                type : custom</div><div class="line">                tokenizer : myTokenizer1</div><div class="line">                filter : [myTokenFilter1, myTokenFilter2]</div><div class="line">                char_filter : [my_html]</div><div class="line">                position_increment_gap: 256</div><div class="line">        tokenizer :</div><div class="line">            myTokenizer1 :</div><div class="line">                type : standard</div><div class="line">                max_token_length : 900</div><div class="line">        filter :</div><div class="line">            myTokenFilter1 :</div><div class="line">                type : stop</div><div class="line">                stopwords : [stop1, stop2, stop3, stop4]</div><div class="line">            myTokenFilter2 :</div><div class="line">                type : length</div><div class="line">                min : 0</div><div class="line">                max : 2000</div><div class="line">        char_filter :</div><div class="line">              my_html :</div><div class="line">                type : html_strip</div><div class="line">                escaped_tags : [xxx, yyy]</div><div class="line">                read_ahead : 1024</div></pre></td></tr></table></figure>
+<h3 id="10、fingerprint-分词器"><a href="#10、fingerprint-分词器" class="headerlink" title="10、fingerprint 分词器"></a>10、fingerprint 分词器</h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-fingerprint-analyzer.html" target="_blank" rel="external">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-fingerprint-analyzer.html</a></p>
+<hr>
+<h2 id="中文分词器："><a href="#中文分词器：" class="headerlink" title="中文分词器："></a>中文分词器：</h2><h3 id="1、ik-analyzer"><a href="#1、ik-analyzer" class="headerlink" title="1、ik-analyzer"></a>1、ik-analyzer</h3><p><a href="https://github.com/wks/ik-analyzer" target="_blank" rel="external">https://github.com/wks/ik-analyzer</a></p>
+<p>IKAnalyzer是一个开源的，基于java语言开发的轻量级的中文分词工具包。</p>
+<p>采用了特有的“正向迭代最细粒度切分算法“，支持细粒度和最大词长两种切分模式；具有83万字/秒（1600KB/S）的高速处理能力。</p>
+<p>采用了多子处理器分析模式，支持：英文字母、数字、中文词汇等分词处理，兼容韩文、日文字符</p>
+<p>优化的词典存储，更小的内存占用。支持用户词典扩展定义</p>
+<p>针对Lucene全文检索优化的查询分析器IKQueryParser(作者吐血推荐)；引入简单搜索表达式，采用歧义分析算法优化查询关键字的搜索排列组合，能极大的提高Lucene检索的命中率。</p>
+<p>Maven用法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.wltea.ik-analyzer<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ik-analyzer<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在IK Analyzer加入Maven Central Repository之前，你需要手动安装，安装到本地的repository，或者上传到自己的Maven repository服务器上。</p>
+<p>要安装到本地Maven repository，使用如下命令，将自动编译，打包并安装：<br>mvn install -Dmaven.test.skip=true</p>
+<h4 id="Elasticsearch添加中文分词"><a href="#Elasticsearch添加中文分词" class="headerlink" title="Elasticsearch添加中文分词"></a>Elasticsearch添加中文分词</h4><h5 id="安装IK分词插件"><a href="#安装IK分词插件" class="headerlink" title="安装IK分词插件"></a>安装IK分词插件</h5><p><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="external">https://github.com/medcl/elasticsearch-analysis-ik</a></p>
+<p>进入elasticsearch-analysis-ik-master</p>
+<p>更多安装请参考博客：</p>
+<p>1、<a href="http://blog.csdn.net/dingzfang/article/details/42776693" target="_blank" rel="external">为elastic添加中文分词</a></p>
+<p>2、<a href="http://www.cnblogs.com/xing901022/p/5910139.html" target="_blank" rel="external">如何在Elasticsearch中安装中文分词器(IK+pinyin)</a></p>
+<p>3、<a href="http://blog.csdn.net/jam00/article/details/52983056" target="_blank" rel="external">Elasticsearch 中文分词器 IK 配置和使用</a></p>
+<h3 id="2、结巴中文分词"><a href="#2、结巴中文分词" class="headerlink" title="2、结巴中文分词"></a>2、结巴中文分词</h3><h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>1、支持三种分词模式：</p>
+<ul>
+<li><p>精确模式，试图将句子最精确地切开，适合文本分析；</p>
+</li>
+<li><p>全模式，把句子中所有的可以成词的词语都扫描出来, 速度非常快，但是不能解决歧义；</p>
+</li>
+<li><p>搜索引擎模式，在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。</p>
+</li>
+</ul>
+<p>2、支持繁体分词</p>
+<p>3、支持自定义词典</p>
+<h3 id="3、THULAC"><a href="#3、THULAC" class="headerlink" title="3、THULAC"></a>3、THULAC</h3><p>THULAC（THU Lexical Analyzer for Chinese）由清华大学自然语言处理与社会人文计算实验室研制推出的一套中文词法分析工具包，具有中文分词和词性标注功能。THULAC具有如下几个特点：</p>
+<p>能力强。利用我们集成的目前世界上规模最大的人工分词和词性标注中文语料库（约含5800万字）训练而成，模型标注能力强大。</p>
+<p>准确率高。该工具包在标准数据集Chinese Treebank（CTB5）上分词的F1值可达97.3％，词性标注的F1值可达到92.9％，与该数据集上最好方法效果相当。</p>
+<p>速度较快。同时进行分词和词性标注速度为300KB/s，每秒可处理约15万字。只进行分词速度可达到1.3MB/s。</p>
+<p>中文分词工具thulac4j发布</p>
+<p>1、规范化分词词典，并去掉一些无用词；</p>
+<p>2、重写DAT（双数组Trie树）的构造算法，生成的DAT size减少了8%左右，从而节省了内存；</p>
+<p>3、优化分词算法，提高了分词速率。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.github.yizhiru<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>thulac4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;thulac4j.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://www.cnblogs.com/en-heng/p/6526598.html" target="_blank" rel="external">http://www.cnblogs.com/en-heng/p/6526598.html</a></p>
+<p>thulac4j支持两种分词模式：</p>
+<p>SegOnly模式，只分词没有词性标注；</p>
+<p>SegPos模式，分词兼有词性标注。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// SegOnly mode</span></div><div class="line">String sentence = <span class="string">"滔滔的流水，向着波士顿湾无声逝去"</span>;</div><div class="line">SegOnly seg = <span class="keyword">new</span> SegOnly(<span class="string">"models/seg_only.bin"</span>);</div><div class="line">System.out.println(seg.segment(sentence));</div><div class="line"><span class="comment">// [滔滔, 的, 流水, ，, 向着, 波士顿湾, 无声, 逝去]</span></div><div class="line"></div><div class="line"><span class="comment">// SegPos mode</span></div><div class="line">SegPos pos = <span class="keyword">new</span> SegPos(<span class="string">"models/seg_pos.bin"</span>);</div><div class="line">System.out.println(pos.segment(sentence));</div><div class="line"><span class="comment">//[滔滔/a, 的/u, 流水/n, ，/w, 向着/p, 波士顿湾/ns, 无声/v, 逝去/v]</span></div></pre></td></tr></table></figure>
+<h3 id="4、NLPIR"><a href="#4、NLPIR" class="headerlink" title="4、NLPIR"></a>4、NLPIR</h3><p>中科院计算所 NLPIR：<a href="http://ictclas.nlpir.org/nlpir/" target="_blank" rel="external">http://ictclas.nlpir.org/nlpir/</a>  (可直接在线分析中文)</p>
+<p>下载地址：<a href="https://github.com/NLPIR-team/NLPIR" target="_blank" rel="external">https://github.com/NLPIR-team/NLPIR</a></p>
+<p>中科院分词系统(NLPIR)JAVA简易教程: <a href="http://www.cnblogs.com/wukongjiuwo/p/4092480.html" target="_blank" rel="external">http://www.cnblogs.com/wukongjiuwo/p/4092480.html</a></p>
+<h3 id="5、ansj分词器"><a href="#5、ansj分词器" class="headerlink" title="5、ansj分词器"></a>5、ansj分词器</h3><p><a href="https://github.com/NLPchina/ansj_seg" target="_blank" rel="external">https://github.com/NLPchina/ansj_seg</a></p>
+<p>这是一个基于n-Gram+CRF+HMM的中文分词的java实现.</p>
+<p>分词速度达到每秒钟大约200万字左右（mac air下测试），准确率能达到96%以上</p>
+<p>目前实现了.中文分词. 中文姓名识别 .</p>
+<p>用户自定义词典,关键字提取，自动摘要，关键字标记等功能<br>可以应用到自然语言处理等方面,适用于对分词效果要求高的各种项目.</p>
+<p>maven 引入：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.ansj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ansj_seg<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>调用demo</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String str = <span class="string">"欢迎使用ansj_seg,(ansj中文分词)在这里如果你遇到什么问题都可以联系我.我一定尽我所能.帮助大家.ansj_seg更快,更准,更自由!"</span> ;</div><div class="line"> System.out.println(ToAnalysis.parse(str));</div><div class="line"></div><div class="line"> 欢迎/v,使用/v,ansj/en,_,seg/en,,,(,ansj/en,中文/nz,分词/n,),在/p,这里/r,如果/c,你/r,遇到/v,什么/r,问题/n,都/d,可以/v,联系/v,我/r,./m,我/r,一定/d,尽我所能/l,./m,帮助/v,大家/r,./m,ansj/en,_,seg/en,更快/d,,,更/d,准/a,,,更/d,自由/a,!</div></pre></td></tr></table></figure>
+<h3 id="6、哈工大的LTP"><a href="#6、哈工大的LTP" class="headerlink" title="6、哈工大的LTP"></a>6、哈工大的LTP</h3><p><a href="https://link.zhihu.com/?target=https%3A//github.com/HIT-SCIR/ltp" target="_blank" rel="external">https://link.zhihu.com/?target=https%3A//github.com/HIT-SCIR/ltp</a></p>
+<p>LTP制定了基于XML的语言处理结果表示，并在此基础上提供了一整套自底向上的丰富而且高效的中文语言处理模块（包括词法、句法、语义等6项中文处理核心技术），以及基于动态链接库（Dynamic Link Library, DLL）的应用程序接口、可视化工具，并且能够以网络服务（Web Service）的形式进行使用。</p>
+<p>关于LTP的使用，请参考:  <a href="http://ltp.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">http://ltp.readthedocs.io/zh_CN/latest/</a></p>
+<h3 id="7、庖丁解牛"><a href="#7、庖丁解牛" class="headerlink" title="7、庖丁解牛"></a>7、庖丁解牛</h3><p>下载地址：<a href="http://pan.baidu.com/s/1eQ88SZS" target="_blank" rel="external">http://pan.baidu.com/s/1eQ88SZS</a></p>
+<p>使用分为如下几步：</p>
+<ol>
+<li><p>配置dic文件：<br>修改paoding-analysis.jar中的paoding-dic-home.properties文件，将“#paoding.dic.home=dic”的注释去掉，并配置成自己dic文件的本地存放路径。eg：/home/hadoop/work/paoding-analysis-2.0.4-beta/dic</p>
+</li>
+<li><p>把Jar包导入到项目中：<br>将paoding-analysis.jar、commons-logging.jar、lucene-analyzers-2.2.0.jar和lucene-core-2.2.0.jar四个包导入到项目中，这时就可以在代码片段中使用庖丁解牛工具提供的中文分词技术，例如：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Analyzer analyzer = <span class="keyword">new</span> PaodingAnalyzer(); <span class="comment">//定义一个解析器</span></div><div class="line">String text = <span class="string">"庖丁系统是个完全基于lucene的中文分词系统，它就是重新建了一个analyzer，叫做PaodingAnalyzer，这个analyer的核心任务就是生成一个可以切词TokenStream。"</span>; &lt;span style=<span class="string">"font-family: Arial, Helvetica, sans-serif;"</span>&gt;<span class="comment">//待分词的内容&lt;/span&gt;</span></div><div class="line">TokenStream tokenStream = analyzer.tokenStream(text, <span class="keyword">new</span> StringReader(text)); <span class="comment">//得到token序列的输出流</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    Token t;</div><div class="line">    <span class="keyword">while</span> ((t = tokenStream.next()) != <span class="keyword">null</span>)</div><div class="line">    &#123;</div><div class="line">           System.out.println(t); <span class="comment">//输出每个token</span></div><div class="line">    &#125;</div><div class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="8、sogo在线分词"><a href="#8、sogo在线分词" class="headerlink" title="8、sogo在线分词"></a>8、sogo在线分词</h3><p>sogo在线分词采用了基于汉字标注的分词方法，主要使用了线性链链CRF（Linear-chain CRF）模型。词性标注模块主要基于结构化线性模型（Structured Linear Model）</p>
+<p>在线使用地址为：<br><a href="http://www.sogou.com/labs/webservice/" target="_blank" rel="external">http://www.sogou.com/labs/webservice/</a></p>
+<h3 id="9、word分词"><a href="#9、word分词" class="headerlink" title="9、word分词"></a>9、word分词</h3><p>地址： <a href="https://github.com/ysc/word" target="_blank" rel="external">https://github.com/ysc/word</a></p>
+<p>word分词是一个Java实现的分布式的中文分词组件，提供了多种基于词典的分词算法，并利用ngram模型来消除歧义。能准确识别英文、数字，以及日期、时间等数量词，能识别人名、地名、组织机构名等未登录词。能通过自定义配置文件来改变组件行为，能自定义用户词库、自动检测词库变化、支持大规模分布式环境，能灵活指定多种分词算法，能使用refine功能灵活控制分词结果，还能使用词频统计、词性标注、同义标注、反义标注、拼音标注等功能。提供了10种分词算法，还提供了10种文本相似度算法，同时还无缝和Lucene、Solr、ElasticSearch、Luke集成。注意：word1.3需要JDK1.8</p>
+<p>maven 中引入依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apdplat<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>word<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>ElasticSearch插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">1、打开命令行并切换到elasticsearch的bin目录</div><div class="line">cd elasticsearch-2.1.1/bin</div><div class="line"></div><div class="line">2、运行plugin脚本安装word分词插件：</div><div class="line">./plugin install http://apdplat.org/word/archive/v1.4.zip</div><div class="line"></div><div class="line">安装的时候注意：</div><div class="line">	如果提示：</div><div class="line">		ERROR: failed to download</div><div class="line">	或者</div><div class="line">		Failed to install word, reason: failed to download</div><div class="line">	或者</div><div class="line">		ERROR: incorrect hash (SHA1)</div><div class="line">	则重新再次运行命令，如果还是不行，多试两次</div><div class="line"></div><div class="line">如果是elasticsearch1.x系列版本，则使用如下命令：</div><div class="line">./plugin -u http://apdplat.org/word/archive/v1.3.1.zip -i word</div><div class="line"></div><div class="line">3、修改文件elasticsearch-2.1.1/config/elasticsearch.yml，新增如下配置：</div><div class="line">index.analysis.analyzer.default.type : &quot;word&quot;</div><div class="line">index.analysis.tokenizer.default.type : &quot;word&quot;</div><div class="line"></div><div class="line">4、启动ElasticSearch测试效果，在Chrome浏览器中访问：</div><div class="line">http://localhost:9200/_analyze?analyzer=word&amp;text=杨尚川是APDPlat应用级产品开发平台的作者</div><div class="line"></div><div class="line">5、自定义配置</div><div class="line">修改配置文件elasticsearch-2.1.1/plugins/word/word.local.conf</div><div class="line"></div><div class="line">6、指定分词算法</div><div class="line">修改文件elasticsearch-2.1.1/config/elasticsearch.yml，新增如下配置：</div><div class="line">index.analysis.analyzer.default.segAlgorithm : &quot;ReverseMinimumMatching&quot;</div><div class="line">index.analysis.tokenizer.default.segAlgorithm : &quot;ReverseMinimumMatching&quot;</div><div class="line"></div><div class="line">这里segAlgorithm可指定的值有：</div><div class="line">正向最大匹配算法：MaximumMatching</div><div class="line">逆向最大匹配算法：ReverseMaximumMatching</div><div class="line">正向最小匹配算法：MinimumMatching</div><div class="line">逆向最小匹配算法：ReverseMinimumMatching</div><div class="line">双向最大匹配算法：BidirectionalMaximumMatching</div><div class="line">双向最小匹配算法：BidirectionalMinimumMatching</div><div class="line">双向最大最小匹配算法：BidirectionalMaximumMinimumMatching</div><div class="line">全切分算法：FullSegmentation</div><div class="line">最少词数算法：MinimalWordCount</div><div class="line">最大Ngram分值算法：MaxNgramScore</div><div class="line">如不指定，默认使用双向最大匹配算法：BidirectionalMaximumMatching</div></pre></td></tr></table></figure>
+<h3 id="10、jcseg分词器"><a href="#10、jcseg分词器" class="headerlink" title="10、jcseg分词器"></a>10、jcseg分词器</h3><p><a href="https://code.google.com/archive/p/jcseg/" target="_blank" rel="external">https://code.google.com/archive/p/jcseg/</a></p>
+<h3 id="11、stanford分词器"><a href="#11、stanford分词器" class="headerlink" title="11、stanford分词器"></a>11、stanford分词器</h3><p>Stanford大学的一个开源分词工具，目前已支持汉语。</p>
+<p>首先，去【1】下载Download Stanford Word Segmenter version 3.5.2，取得里面的 data 文件夹，放在maven project的 src/main/resources 里。</p>
+<p>然后，maven依赖添加：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">corenlp.version</span>&gt;</span>3.6.0<span class="tag">&lt;/<span class="name">corenlp.version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>edu.stanford.nlp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>stanford-corenlp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;corenlp.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>edu.stanford.nlp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>stanford-corenlp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;corenlp.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>models<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>edu.stanford.nlp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>stanford-corenlp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;corenlp.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">classifier</span>&gt;</span>models-chinese<span class="tag">&lt;/<span class="name">classifier</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Properties;</div><div class="line"></div><div class="line"><span class="keyword">import</span> edu.stanford.nlp.ie.crf.CRFClassifier;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CoreNLPSegment</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> CoreNLPSegment instance;</div><div class="line">    <span class="keyword">private</span> CRFClassifier         classifier;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CoreNLPSegment</span><span class="params">()</span></span>&#123;</div><div class="line">        Properties props = <span class="keyword">new</span> Properties();</div><div class="line">        props.setProperty(<span class="string">"sighanCorporaDict"</span>, <span class="string">"data"</span>);</div><div class="line">        props.setProperty(<span class="string">"serDictionary"</span>, <span class="string">"data/dict-chris6.ser.gz"</span>);</div><div class="line">        props.setProperty(<span class="string">"inputEncoding"</span>, <span class="string">"UTF-8"</span>);</div><div class="line">        props.setProperty(<span class="string">"sighanPostProcessing"</span>, <span class="string">"true"</span>);</div><div class="line">        classifier = <span class="keyword">new</span> CRFClassifier(props);</div><div class="line">        classifier.loadClassifierNoExceptions(<span class="string">"data/ctb.gz"</span>, props);</div><div class="line">        classifier.flags.setProperties(props);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CoreNLPSegment <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</div><div class="line">            instance = <span class="keyword">new</span> CoreNLPSegment();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> String[] doSegment(String data) &#123;</div><div class="line">        <span class="keyword">return</span> (String[]) classifier.segmentString(data).toArray();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">        String sentence = <span class="string">"他和我在学校里常打桌球。"</span>;</div><div class="line">        String ret[] = CoreNLPSegment.getInstance().doSegment(sentence);</div><div class="line">        <span class="keyword">for</span> (String str : ret) &#123;</div><div class="line">            System.out.println(str);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>博客</strong>：</p>
+<p><a href="https://blog.sectong.com/blog/corenlp_segment.html" target="_blank" rel="external">https://blog.sectong.com/blog/corenlp_segment.html</a></p>
+<p><a href="http://blog.csdn.net/lightty/article/details/51766602" target="_blank" rel="external">http://blog.csdn.net/lightty/article/details/51766602</a></p>
+<h3 id="12、Smartcn"><a href="#12、Smartcn" class="headerlink" title="12、Smartcn"></a>12、Smartcn</h3><p>Smartcn为Apache2.0协议的开源中文分词系统，Java语言编写，修改的中科院计算所ICTCLAS分词系统。很早以前看到Lucene上多了一个中文分词的contribution，当时只是简单的扫了一下.class文件的文件名，通过文件名可以看得出又是一个改的ICTCLAS的分词系统。</p>
+<p><a href="http://lucene.apache.org/core/5_1_0/analyzers-smartcn/org/apache/lucene/analysis/cn/smart/SmartChineseAnalyzer.html" target="_blank" rel="external">http://lucene.apache.org/core/5_1_0/analyzers-smartcn/org/apache/lucene/analysis/cn/smart/SmartChineseAnalyzer.html</a></p>
+<hr>
+<h2 id="自定义分词器"><a href="#自定义分词器" class="headerlink" title="自定义分词器"></a>自定义分词器</h2><p>虽然Elasticsearch带有一些现成的分析器，然而在分析器上Elasticsearch真正的强大之处在于，你可以通过在一个适合你的特定数据的设置之中组合字符过滤器、分词器、词汇单元过滤器来创建自定义的分析器。</p>
+<p><strong>字符过滤器</strong>：</p>
+<p>字符过滤器 用来 整理 一个尚未被分词的字符串。例如，如果我们的文本是HTML格式的，它会包含像 <code>&lt;p&gt;</code> 或者 <code>&lt;div&gt;</code> 这样的HTML标签，这些标签是我们不想索引的。我们可以使用 html清除 字符过滤器 来移除掉所有的HTML标签，并且像把 <code>&amp;Aacute;</code> 转换为相对应的Unicode字符 Á 这样，转换HTML实体。</p>
+<p>一个分析器可能有0个或者多个字符过滤器。</p>
+<p><strong>分词器</strong>:</p>
+<p>一个分析器 必须 有一个唯一的分词器。 分词器把字符串分解成单个词条或者词汇单元。 标准 分析器里使用的 标准 分词器 把一个字符串根据单词边界分解成单个词条，并且移除掉大部分的标点符号，然而还有其他不同行为的分词器存在。</p>
+<p><strong>词单元过滤器</strong>:</p>
+<p>经过分词，作为结果的 词单元流 会按照指定的顺序通过指定的词单元过滤器 。</p>
+<p>词单元过滤器可以修改、添加或者移除词单元。我们已经提到过 lowercase 和 stop 词过滤器 ，但是在 Elasticsearch 里面还有很多可供选择的词单元过滤器。 词干过滤器 把单词 遏制 为 词干。 ascii_folding 过滤器移除变音符，把一个像 “très” 这样的词转换为 “tres” 。 ngram 和 edge_ngram 词单元过滤器 可以产生 适合用于部分匹配或者自动补全的词单元。</p>
+<h3 id="创建一个自定义分析器"><a href="#创建一个自定义分析器" class="headerlink" title="创建一个自定义分析器"></a>创建一个自定义分析器</h3><p>我们可以在 analysis 下的相应位置设置字符过滤器、分词器和词单元过滤器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">PUT /my_index</div><div class="line">&#123;</div><div class="line">    &quot;settings&quot;: &#123;</div><div class="line">        &quot;analysis&quot;: &#123;</div><div class="line">            &quot;char_filter&quot;: &#123; ... custom character filters ... &#125;,</div><div class="line">            &quot;tokenizer&quot;:   &#123; ...    custom tokenizers     ... &#125;,</div><div class="line">            &quot;filter&quot;:      &#123; ...   custom token filters   ... &#125;,</div><div class="line">            &quot;analyzer&quot;:    &#123; ...    custom analyzers      ... &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个分析器可以做到下面的这些事:</p>
+<p>1、使用 html清除 字符过滤器移除HTML部分。</p>
+<p>2、使用一个自定义的 映射 字符过滤器把 &amp; 替换为 “和” ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;char_filter&quot;: &#123;</div><div class="line">    &quot;&amp;_to_and&quot;: &#123;</div><div class="line">        &quot;type&quot;:       &quot;mapping&quot;,</div><div class="line">        &quot;mappings&quot;: [ &quot;&amp;=&gt; and &quot;]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3、使用 标准 分词器分词。</p>
+<p>4、小写词条，使用 小写 词过滤器处理。</p>
+<p>5、使用自定义 停止 词过滤器移除自定义的停止词列表中包含的词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;filter&quot;: &#123;</div><div class="line">    &quot;my_stopwords&quot;: &#123;</div><div class="line">        &quot;type&quot;:        &quot;stop&quot;,</div><div class="line">        &quot;stopwords&quot;: [ &quot;the&quot;, &quot;a&quot; ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们的分析器定义用我们之前已经设置好的自定义过滤器组合了已经定义好的分词器和过滤器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&quot;analyzer&quot;: &#123;</div><div class="line">    &quot;my_analyzer&quot;: &#123;</div><div class="line">        &quot;type&quot;:           &quot;custom&quot;,</div><div class="line">        &quot;char_filter&quot;:  [ &quot;html_strip&quot;, &quot;&amp;_to_and&quot; ],</div><div class="line">        &quot;tokenizer&quot;:      &quot;standard&quot;,</div><div class="line">        &quot;filter&quot;:       [ &quot;lowercase&quot;, &quot;my_stopwords&quot; ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>汇总起来，完整的 创建索引 请求 看起来应该像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PUT /my_index</div><div class="line">&#123;</div><div class="line">    &quot;settings&quot;: &#123;</div><div class="line">        &quot;analysis&quot;: &#123;</div><div class="line">            &quot;char_filter&quot;: &#123;</div><div class="line">                &quot;&amp;_to_and&quot;: &#123;</div><div class="line">                    &quot;type&quot;:       &quot;mapping&quot;,</div><div class="line">                    &quot;mappings&quot;: [ &quot;&amp;=&gt; and &quot;]</div><div class="line">            &#125;&#125;,</div><div class="line">            &quot;filter&quot;: &#123;</div><div class="line">                &quot;my_stopwords&quot;: &#123;</div><div class="line">                    &quot;type&quot;:       &quot;stop&quot;,</div><div class="line">                    &quot;stopwords&quot;: [ &quot;the&quot;, &quot;a&quot; ]</div><div class="line">            &#125;&#125;,</div><div class="line">            &quot;analyzer&quot;: &#123;</div><div class="line">                &quot;my_analyzer&quot;: &#123;</div><div class="line">                    &quot;type&quot;:         &quot;custom&quot;,</div><div class="line">                    &quot;char_filter&quot;:  [ &quot;html_strip&quot;, &quot;&amp;_to_and&quot; ],</div><div class="line">                    &quot;tokenizer&quot;:    &quot;standard&quot;,</div><div class="line">                    &quot;filter&quot;:       [ &quot;lowercase&quot;, &quot;my_stopwords&quot; ]</div><div class="line">            &#125;&#125;</div><div class="line">&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+<p>索引被创建以后，使用 analyze API 来 测试这个新的分析器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">GET /my_index/_analyze?analyzer=my_analyzer</div><div class="line">The quick &amp; brown fox</div></pre></td></tr></table></figure>
+<p>下面的缩略结果展示出我们的分析器正在正确地运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;tokens&quot; : [</div><div class="line">      &#123; &quot;token&quot; :   &quot;quick&quot;,    &quot;position&quot; : 2 &#125;,</div><div class="line">      &#123; &quot;token&quot; :   &quot;and&quot;,      &quot;position&quot; : 3 &#125;,</div><div class="line">      &#123; &quot;token&quot; :   &quot;brown&quot;,    &quot;position&quot; : 4 &#125;,</div><div class="line">      &#123; &quot;token&quot; :   &quot;fox&quot;,      &quot;position&quot; : 5 &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个分析器现在是没有多大用处的，除非我们告诉 Elasticsearch在哪里用上它。我们可以像下面这样把这个分析器应用在一个 string 字段上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">PUT /my_index/_mapping/my_type</div><div class="line">&#123;</div><div class="line">    &quot;properties&quot;: &#123;</div><div class="line">        &quot;title&quot;: &#123;</div><div class="line">            &quot;type&quot;:      &quot;string&quot;,</div><div class="line">            &quot;analyzer&quot;:  &quot;my_analyzer&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>整理参考网上资料，如有不正确的地方还请多多指教！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;介绍：ElasticSearch 是一个基于 Lucene 的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于 RESTful web 接口。Elasticsearch 是用 Java 开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。&lt;/p&gt;
+&lt;p&gt;Elasticsearch中，内置了很多分词器（analyzers）。下面来进行比较下系统默认分词器和常用的中文分词器之间的区别。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Elasticsearch" scheme="http://yoursite.com/tags/Elasticsearch/"/>
+    
+  </entry>
   
   <entry>
     <title>那些年我看过的书 —— 致敬我的大学生活 —— Say Good Bye ！</title>
@@ -1610,47 +1827,6 @@
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
     
       <category term="多线程" scheme="http://yoursite.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title> 六月 —— 愿你做最美好的自己！</title>
-    <link href="http://yoursite.com/2017/06/02/poetry2/"/>
-    <id>http://yoursite.com/2017/06/02/poetry2/</id>
-    <published>2017-06-02T09:49:19.563Z</published>
-    <updated>2017-06-02T11:29:42.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>美妙的六月已经到来，送你八封信，愿时光轻缓，愿微风正好，愿你做最美好的自己。</p>
-<p>第一封 —— 关于压力</p>
-<p>鸡蛋，从外打破是食物，从内打破是生命。人生亦是，从外打破是压力，从内打破是成长。<br>如果你等待别人打破你，那么你注定成为别人的食物；如果能让自己从内打破，那么你会发现自己的成长相当于一种重生。</p>
-<p>第二封 —— 关于读书</p>
-<p> 读书是一种充实人生的艺术，没有书的人生就像空心的竹子一样，空洞无物。犹太人让孩子们亲吻涂有蜂蜜的书本，是为了让他们记住：书本是甜的，要让甜蜜充满人生就要读书。读书是一本人生最难得的存折，一点一滴地积累，最后你会发现：自己是世界上最富有的人。<br><a id="more"></a><br>第三封 —— 关于人际关系</p>
-<p>你可以要求自己守信，但不能要求别人守信；你可以要求自己对人好，但不能期待别人对你好。你怎样对人，并不代表人家就会怎么对你。如果看不透这一点，你只会徒添不必要的烦恼。</p>
-<p>第四封 —— 关于孤独</p>
-<p>每个人都要经历一段孤独的日子，每段路都有一段独孤的时光。父母不可能一直帮着你，朋友也不可能一直围着你转。孤独不是孤僻，更不是寂寞。经历过孤独的人，内心更坚强，不管处于什么样的环境都能让自己安静，更好地调整状态，面对环境。</p>
-<p>第五封 —— 关于修养</p>
-<p>看别人不顺眼，是自己修养不够。人愤怒的那一瞬间，智商是零，过一分钟后恢复正常。人的优雅关键在于控制自己的惰绪，用嘴伤害人，是最愚蠢的一种行为。 </p>
-<p>第六封 —— 关于现实</p>
-<p>现实有太多的不如意，就算生活给你的是垃圾，你同样能把垃圾踩在脚底下登上世界之巅。你要把自己逼出最大的潜能，没有人会为你的未来买单，你要么努力向上爬，要么烂在社会最底层的泥里，这就是生活。  </p>
-<p>第七封 —— 关于自己</p>
-<p>一个人经过不同程度的鍛炼，就获得不同程度的修养。好比香料，捣得愈碎，磨得愈细，香得愈浓烈。<br>我们曾如此渴望命运的波澜，到最后才发现：人生最曼妙的风景，竟是内心的淡定与从容。我们曾如此期盼外界的认可，到最后才知道：世界是自己的，与他人毫无关系。</p>
-<p>第八封 —— 关于幸福</p>
-<p>常有人说，我现在不幸福，等我结了婚或买了房……就幸福了。事实是，幸福的人在哪儿都幸福，不幸福的人在哪儿都不幸福。所以要先培养自己的幸福力，不论发生什么，别人都动不了你的自在开心。这才是真正强大的气场和自信。</p>
-<p>幸福的人生，需要三种姿态：对过去，要淡；对现在，要惜；对未来，要信。愿你拥有幸福的能力，做最美好的自己。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;美妙的六月已经到来，送你八封信，愿时光轻缓，愿微风正好，愿你做最美好的自己。&lt;/p&gt;
-&lt;p&gt;第一封 —— 关于压力&lt;/p&gt;
-&lt;p&gt;鸡蛋，从外打破是食物，从内打破是生命。人生亦是，从外打破是压力，从内打破是成长。&lt;br&gt;如果你等待别人打破你，那么你注定成为别人的食物；如果能让自己从内打破，那么你会发现自己的成长相当于一种重生。&lt;/p&gt;
-&lt;p&gt;第二封 —— 关于读书&lt;/p&gt;
-&lt;p&gt; 读书是一种充实人生的艺术，没有书的人生就像空心的竹子一样，空洞无物。犹太人让孩子们亲吻涂有蜂蜜的书本，是为了让他们记住：书本是甜的，要让甜蜜充满人生就要读书。读书是一本人生最难得的存折，一点一滴地积累，最后你会发现：自己是世界上最富有的人。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
