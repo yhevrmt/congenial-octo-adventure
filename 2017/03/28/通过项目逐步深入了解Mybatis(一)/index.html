@@ -333,7 +333,7 @@ var _hmt = _hmt || [];
 <p>Mybatis默认使用log4j作为输出日志信息。</p>
 <h3 id="4、工程结构"><a href="#4、工程结构" class="headerlink" title="4、工程结构"></a>4、工程结构</h3><p><img src="http://ohfk1r827.bkt.clouddn.com/%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg" alt=""></p>
 <h3 id="5、SqlMapConfig-xml"><a href="#5、SqlMapConfig-xml" class="headerlink" title="5、SqlMapConfig.xml"></a>5、SqlMapConfig.xml</h3><p>配置 Mybatis 的运行环境、数据源、事务等</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE configuration</span></div><div class="line">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</div><div class="line">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 和spring整合后 environments配置将废除--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 使用jdbc事务管理,事务由 Mybatis 控制--&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span> /&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 数据库连接池,由Mybatis管理，数据库名是mybatis_test，Mysql用户名root，密码root --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/mybatis_test?characterEncoding=utf-8"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> <span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE configuration</span></div><div class="line">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</div><div class="line">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 和spring整合后 environments配置将废除--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 使用jdbc事务管理,事务由 Mybatis 控制--&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span> /&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 数据库连接池,由Mybatis管理，数据库名是mybatis_test，Mysql用户名root，密码root --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/mybatis_test?characterEncoding=utf-8"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="6、创建-po-类"><a href="#6、创建-po-类" class="headerlink" title="6、创建 po 类"></a>6、创建 po 类</h3><p>Po 类作为 mybatis 进行 sql 映射使用，po 类通常与数据库表对应，User.java 如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.zhisheng.mybatis.po;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by 10412 on 2016/11/28.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</div><div class="line">    <span class="keyword">private</span> String username;            <span class="comment">// 用户姓名</span></div><div class="line">    <span class="keyword">private</span> String sex;                 <span class="comment">// 性别</span></div><div class="line">    <span class="keyword">private</span> Date birthday;              <span class="comment">// 生日</span></div><div class="line">    <span class="keyword">private</span> String address;             <span class="comment">// 地址</span></div><div class="line"></div><div class="line">    <span class="comment">//getter and setter</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> username;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.username = username;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getBirthday</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> birthday;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBirthday</span><span class="params">(Date birthday)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.birthday = birthday;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSex</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sex;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSex</span><span class="params">(String sex)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.sex = sex;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAddress</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> address;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(String address)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.address = address;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="7、根据用户-id（主键）查询用户信息"><a href="#7、根据用户-id（主键）查询用户信息" class="headerlink" title="7、根据用户 id（主键）查询用户信息"></a>7、根据用户 id（主键）查询用户信息</h3><ul>
@@ -345,7 +345,7 @@ var _hmt = _hmt || [];
 </ul>
 </blockquote>
 <p><code>User.xml</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE mapper</span></div><div class="line">PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</div><div class="line">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> <span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE mapper</span></div><div class="line">PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</div><div class="line">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>namespace</code> ：命名空间，对 sql 进行分类化管理，用于隔离 sql 语句，后面会讲另一层非常重要的作用。</p>
 <p>​</p>
 <p>在 <code>User.xml</code> 中加入</p>
@@ -791,11 +791,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pyspider</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pyspider</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,7 +811,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -819,15 +819,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -839,15 +835,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">励志</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,43 +855,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旋转词</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">循环队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Filter过滤器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">邮件发送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">finally</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,6 +868,42 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">finally</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">循环队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">邮件发送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Filter过滤器</a>
               </li>
              
               <li class="article-tag-list-item">

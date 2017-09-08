@@ -340,7 +340,7 @@ var _hmt = _hmt || [];
 <p>另外针对 multipart/form-data 类型的参数，也就是上传的文件编码同样也是使用 ContentType 定义的字符集编码，值得注意的地方是上传文件是用字节流的方式传输到服务器的本地临时目录，这个过程并没有涉及到字符编码，而真正编码是在将文件内容添加到 parameters 中，如果用这个编码不能编码时将会用默认编码 ISO-8859-1 来编码。</p>
 <h4 id="4-4-HTTP-BODY-的编解码"><a href="#4-4-HTTP-BODY-的编解码" class="headerlink" title="4.4 HTTP BODY 的编解码"></a>4.4 HTTP BODY 的编解码</h4><p>当用户请求的资源已经成功获取后，这些内容将通过 Response 返回给客户端浏览器，这个过程先要经过编码再到浏览器进行解码。这个过程的编解码字符集可以通过 response.setCharacterEncoding 来设置，它将会覆盖 request.getCharacterEncoding 的值，并且通过 Header 的 Content-Type 返回客户端，浏览器接受到返回的 socket 流时将通过 Content-Type 的 charset 来解码，如果返回的 HTTP Header 中 Content-Type 没有设置 charset，那么浏览器将根据 Html 的 <meta http-equiv="Content-Type" content="text/html; charset=GBK"> 中的 charset 来解码。如果也没有定义的话，那么浏览器将使用默认的编码来解码。</p>
 <h4 id="4-5-其它需要编码的地方"><a href="#4-5-其它需要编码的地方" class="headerlink" title="4.5 其它需要编码的地方"></a>4.5 其它需要编码的地方</h4><p>除了 URL 和参数编码问题外，在服务端还有很多地方可能存在编码，如可能需要读取 xml、velocity 模版引擎、JSP 或者从数据库读取数据等。<br>xml 文件可以通过设置头来制定编码格式</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div></pre></td></tr></table></figure>
 <p>Velocity 模版设置编码格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">services.VelocityService.input.encoding=UTF-8</div></pre></td></tr></table></figure>
 <p>JSP 设置编码格式：</p>
@@ -695,11 +695,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pyspider</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pyspider</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,7 +715,7 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">String</a>
+                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -723,15 +723,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线程池</a>
+                <a href="javascript:void(0)" class="js-tag color2">String</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -743,15 +739,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">励志</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -763,43 +759,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旋转词</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Velocity</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">循环队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Filter过滤器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">邮件发送</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">finally</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -808,6 +772,42 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">finally</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">循环队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">邮件发送</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">类加载机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Servlet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Filter过滤器</a>
               </li>
              
               <li class="article-tag-list-item">
