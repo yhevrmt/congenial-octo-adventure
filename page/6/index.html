@@ -182,6 +182,75 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MySQL-select-good" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/29/MySQL-select-good/">MySQL 处理海量数据时的一些优化查询速度方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/29/MySQL-select-good/" class="archive-article-date">
+  	<time datetime="2017-04-29T10:05:54.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-29</time>
+</a>
+        
+      </header>
+    
+
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在参与实际项目中，当 MySQL 表的数据量达到百万级时，普通的 SQL 查询效率呈直线下降，而且如果 where 中的查询条件较多时，其查询速度无法容忍。想想可知，假如我们查询淘宝的一个订单详情，如果查询时间高达几十秒，这么高的查询延时，任何用户都会抓狂。因此如何提高 SQL 语句查询效率，显得十分重要。<br>
+        
+          <a class="article-more-a" href="/2017/04/29/MySQL-select-good/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/29/MySQL-select-good/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-feiji" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -571,89 +640,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-循环队列的相关条件和公式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/28/循环队列的相关条件和公式/">循环队列的相关条件和公式</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/28/循环队列的相关条件和公式/" class="archive-article-date">
-  	<time datetime="2017-03-28T11:00:11.318Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
-</a>
-        
-      </header>
-    
-
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>循环队列的相关条件和公式：</strong><br>队尾指针是rear,队头是front，其中QueueSize为循环队列的最大长度</p>
-<ol>
-<li>队空条件：rear==front</li>
-<li>队满条件：(rear+1) %QueueSIze==front</li>
-<li>计算队列长度：（rear-front+QueueSize）%QueueSize</li>
-<li>入队：（rear+1）%QueueSize</li>
-<li>出队：（front+1）%QueueSize</li>
-<li>队列中元素的个数： (rear-front+QueueSize)%QueueSize</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">循环队列</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/28/循环队列的相关条件和公式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -944,6 +930,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Guava</a>
               </li>
             
             <div class="clearfix"></div>
