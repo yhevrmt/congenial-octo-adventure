@@ -5,7 +5,7 @@
 paginate: 10 # pagination based on number of posts
 
 paginate_path: "page:num"
-
+h
 exclude: ["README.md"] # files to exclude
 
 highlighter: rouge
@@ -15,7 +15,7 @@ markdown: kramdown
 disqus: dbyll
 
 google_analytics: dbyll
-
+ 
 title: dbyll
 
 
@@ -25,7 +25,7 @@ defaults:
   -
 
     scope:
-
+ 
       path: "" # empty string for all files
 
     values:
@@ -70,7 +70,7 @@ tags_path: tags.html
 
 
 
-BASE_PATH:
+BASE_PATH:/congenial-octo-adventure
 
 
 
