@@ -1,11 +1,11 @@
-My Blog
+ My Blog
 =====
 
 
 Open source stylish, minimalistic theme for jekyll.  
 Open source Demo: http://dbtek.github.io/dbyll/
 
-###The Demo Example:
+### The Demo Example:
 
 #### Screenshots:
 ![dbyll-screenshot](assets/media/dbyll-ss.png)
