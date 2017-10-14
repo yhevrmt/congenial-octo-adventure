@@ -6,14 +6,14 @@ tags: [setup]
 fullview: true
 ---
 
-##Before
+## Before
 
 Long long ago, I found that anything even gave me a deeply impression before will be forgotten very soon. But I still went my own way.
 
-##Now
+## Now
 
 I set this blog to write down everything I think is important.
 
-##Later
+## Later
 
 I will make this blog better and rich.
