@@ -5,7 +5,7 @@
 paginate: 10 # pagination based on number of posts
 
 paginate_path: "page:num"
-h
+
 exclude: ["README.md"] # files to exclude
 
 highlighter: rouge
